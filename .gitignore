@@ -36,6 +36,15 @@ venv/
 skills
 .agent/
 .agents/
+mcp.json
+
+# Generated tool caches
+.understand-anything/
+
+# One-off fix scripts (not for public repo)
+fix_catalog.py
+fix_colors.py
+fix_yellow.py
 
 # Session backups and local task files
 AGENTS.md.backup.*
