@@ -1,0 +1,39 @@
+# {{ name }}
+
+## Purpose
+
+{{ description or data.get("instructions", data.get("content", "")) }}
+
+{% if data.get("instructions") and description %}
+## Instructions
+
+{{ data["instructions"] }}
+
+{% endif %}
+{% if data.get("constraints") %}
+## Constraints
+
+{% for line in data["constraints"] %}
+- {{ line }}
+{% endfor %}
+
+{% endif %}
+{% if data.get("handoff_prompt") %}
+## Invocation
+
+{{ data["handoff_prompt"] }}
+
+{% endif %}
+{% if requirements.commands %}
+## Required Tools
+
+{% for cmd in requirements.commands %}
+- `{{ cmd }}`
+{% endfor %}
+
+{% endif %}
+{% if tags %}
+## Tags
+
+{{ ", ".join(tags) }}
+{% endif %}

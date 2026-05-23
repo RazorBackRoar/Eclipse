@@ -1,0 +1,93 @@
+# Eclipse.spec
+# -*- mode: python ; coding: utf-8 -*-
+import sys
+from pathlib import Path
+
+block_cipher = None
+
+a = Analysis(
+    ['src/agentbox/main.py'],
+    pathex=[str(Path('.').resolve())],
+    binaries=[],
+    datas=[
+        # Include Jinja2 templates (required at runtime)
+        ('src/agentbox/templates', 'agentbox/templates'),
+    ],
+    hiddenimports=[
+        'PySide6.QtWidgets',
+        'PySide6.QtCore',
+        'PySide6.QtGui',
+        'jinja2',
+        'jinja2.ext',
+        'agentbox.exporters.claude_code',
+        'agentbox.exporters.codex',
+        'agentbox.exporters.cursor',
+        'agentbox.exporters.windsurf',
+        'agentbox.exporters.opencode',
+        'agentbox.importers.scanner',
+        'agentbox.importers.local_drop',
+        'agentbox.importers.github_url',
+        'agentbox.importers.save_to_library',
+    ],
+    hookspath=[],
+    hooksconfig={},
+    runtime_hooks=[],
+    excludes=[
+        'tkinter',
+        'matplotlib',
+        'numpy',
+        'scipy',
+        'pandas',
+        'PIL',
+    ],
+    win_no_prefer_redirects=False,
+    win_private_assemblies=False,
+    cipher=block_cipher,
+    noarchive=False,
+    optimize=0,
+)
+
+pyz = PYZ(
+    a.pure,
+    a.zipped_data,
+    cipher=block_cipher,
+)
+
+exe = EXE(
+    pyz,
+    a.scripts,
+    a.binaries,
+    a.datas,
+    [],
+    name='Eclipse',
+    debug=False,
+    bootloader_ignore_signals=False,
+    strip=False,
+    upx=False,
+    upx_exclude=[],
+    runtime_tmpdir=None,
+    console=False,                  # No terminal window (GUI app)
+    disable_windowed_traceback=False,
+    argv_emulation=False,           # Important for macOS: do not emulate argv
+    target_arch='arm64',            # Native Apple Silicon
+    codesign_identity=None,         # Shared build wrappers apply ad-hoc signing.
+    entitlements_file=None,
+)
+
+app = BUNDLE(
+    exe,
+    name='Eclipse.app',
+    icon='assets/Eclipse.icns',
+    bundle_identifier='com.razorbackroar.eclipse',
+    info_plist={
+        'CFBundleName': 'Eclipse',
+        'CFBundleDisplayName': 'Eclipse',
+        'CFBundleShortVersionString': '0.1.0',
+        'CFBundleVersion': '0.1.0',
+        'LSMinimumSystemVersion': '12.0',
+        'NSHighResolutionCapable': True,
+        'NSRequiresAquaSystemAppearance': False,  # Supports Dark Mode
+        'CFBundleDocumentTypes': [],
+        'NSHumanReadableCopyright': 'Copyright 2026 RazorBackRoar',
+    },
+)

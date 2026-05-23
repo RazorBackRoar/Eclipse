@@ -1,0 +1,17 @@
+# {{ name }}
+
+{{ data.get("instructions", description) }}
+
+{% if data.get("constraints") %}
+## Constraints
+
+{% for line in data["constraints"] %}
+- {{ line }}
+{% endfor %}
+
+{% endif %}
+{% if data.get("handoff_prompt") %}
+## Invocation
+
+{{ data["handoff_prompt"] }}
+{% endif %}

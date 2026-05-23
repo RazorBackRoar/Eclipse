@@ -1,0 +1,19 @@
+# {{ name }}
+
+{{ data.get("instructions", description) }}
+
+{% if data.get("constraints") %}
+## Constraints
+
+{% for line in data["constraints"] %}
+- {{ line }}
+{% endfor %}
+
+{% endif %}
+{% if requirements.commands %}
+## Required Tools
+
+{% for cmd in requirements.commands %}
+- `{{ cmd }}`
+{% endfor %}
+{% endif %}

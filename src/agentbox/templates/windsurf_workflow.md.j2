@@ -1,0 +1,19 @@
+# {{ name }}
+
+{{ data.get("instructions", description) }}
+
+{% if data.get("steps") %}
+## Steps
+
+{% for step in data["steps"] %}
+{{ loop.index }}. {{ step }}
+{% endfor %}
+
+{% endif %}
+{% if data.get("constraints") %}
+## Notes
+
+{% for line in data["constraints"] %}
+- {{ line }}
+{% endfor %}
+{% endif %}

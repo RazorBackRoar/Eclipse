@@ -1,0 +1,3202 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "Eclipse",
+    "languages": [
+      "Python",
+      "Markdown",
+      "JSON",
+      "TOML",
+      "Jinja2",
+      "PyInstaller Spec"
+    ],
+    "frameworks": [
+      "PySide6",
+      "Jinja2",
+      "setuptools",
+      "PyInstaller",
+      "pytest",
+      "Ruff"
+    ],
+    "description": "Local-first AI workspace configuration manager with a library-first architecture that stores agents, skills, and rules, renders them with Jinja2, and exports tool-specific outputs for Claude Code, Codex, Cursor, Windsurf, and OpenCode.",
+    "analyzedAt": "2026-04-18T20:28:14Z",
+    "gitCommitHash": "NO_GIT_REPO"
+  },
+  "nodes": [
+    {
+      "id": "module:project",
+      "type": "module",
+      "name": "Eclipse",
+      "filePath": null,
+      "summary": "Local-first AI workspace configuration manager with a library-first architecture that stores agents, skills, and MCP/server definitions, renders them with Jinja2, and exports tool-specific outputs for Claude Code, Codex, Cursor, Windsurf, and OpenCode.",
+      "tags": [
+        "python",
+        "pyside6",
+        "jinja2",
+        "workspace-manager",
+        "library-first"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "resource:.DS_Store",
+      "type": "resource",
+      "name": ".DS_Store",
+      "filePath": ".DS_Store",
+      "summary": "macOS Finder metadata file at the repository root; not part of application logic.",
+      "tags": [
+        "data",
+        "macos",
+        "generated"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:AGENTS.md",
+      "type": "document",
+      "name": "AGENTS.md",
+      "filePath": "AGENTS.md",
+      "summary": "Repository agent policy defining architectural constraints such as library-first storage, pure exporters, path safety, atomic persistence, and type-safe handling of library items.",
+      "tags": [
+        "docs",
+        "policy",
+        "agent-instructions",
+        "architecture"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:Eclipse.spec",
+      "type": "config",
+      "name": "Eclipse.spec",
+      "filePath": "Eclipse.spec",
+      "summary": "PyInstaller specification for packaging the GUI application as a macOS app bundle, including templates and hidden imports for exporters and importers.",
+      "tags": [
+        "infra",
+        "pyinstaller",
+        "packaging",
+        "macos"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "resource:Icon",
+      "type": "resource",
+      "name": "Icon",
+      "filePath": "Icon",
+      "summary": "Icon metadata file used by macOS packaging or Finder presentation; contains no source logic.",
+      "tags": [
+        "data",
+        "macos",
+        "icon"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:LICENSE",
+      "type": "document",
+      "name": "LICENSE",
+      "filePath": "LICENSE",
+      "summary": "MIT license text defining the legal terms for use, modification, and distribution of Eclipse.",
+      "tags": [
+        "docs",
+        "license",
+        "legal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Top-level project documentation describing Eclipse's library-first architecture, quick start workflow, supported export targets, and macOS installation notes.",
+      "tags": [
+        "docs",
+        "overview",
+        "architecture",
+        "getting-started"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "resource:assets/Eclipse.icns",
+      "type": "resource",
+      "name": "Eclipse.icns",
+      "filePath": "assets/Eclipse.icns",
+      "summary": "Application icon asset bundled into the packaged macOS application.",
+      "tags": [
+        "data",
+        "asset",
+        "icon",
+        "macos"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "resource:exports/.DS_Store",
+      "type": "resource",
+      "name": ".DS_Store",
+      "filePath": "exports/.DS_Store",
+      "summary": "macOS Finder metadata file in the exports directory; unrelated to runtime behavior.",
+      "tags": [
+        "data",
+        "macos",
+        "generated"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "resource:library/.DS_Store",
+      "type": "resource",
+      "name": ".DS_Store",
+      "filePath": "library/.DS_Store",
+      "summary": "macOS Finder metadata file in the library directory; unrelated to application behavior.",
+      "tags": [
+        "data",
+        "macos",
+        "generated"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:library/agents/python-bug-fixer/instructions.md",
+      "type": "document",
+      "name": "instructions.md",
+      "filePath": "library/agents/python-bug-fixer/instructions.md",
+      "summary": "Instruction content for the Python Bug Fixer agent, emphasizing root-cause debugging, minimal diffs, and evidence-based test verification.",
+      "tags": [
+        "docs",
+        "library-item",
+        "agent",
+        "instructions",
+        "python"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:library/agents/python-bug-fixer/manifest.json",
+      "type": "config",
+      "name": "manifest.json",
+      "filePath": "library/agents/python-bug-fixer/manifest.json",
+      "summary": "Manifest describing the Python Bug Fixer library agent, its supported targets, render strategies, required tools, and associated instruction file.",
+      "tags": [
+        "config",
+        "library-item",
+        "agent",
+        "manifest",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "module:agent:python-bug-fixer",
+      "type": "module",
+      "name": "Python Bug Fixer",
+      "filePath": "library/agents/python-bug-fixer/manifest.json",
+      "summary": "Workspace-scoped reusable agent definition for fixing Python bugs with minimal side effects across supported AI coding tools.",
+      "tags": [
+        "library-item",
+        "agent",
+        "python",
+        "bugfix"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:library/mcps/github-mcp/manifest.json",
+      "type": "config",
+      "name": "manifest.json",
+      "filePath": "library/mcps/github-mcp/manifest.json",
+      "summary": "Manifest describing the GitHub MCP server library item, including supported targets, runtime requirements, and the server configuration source file.",
+      "tags": [
+        "config",
+        "library-item",
+        "mcp",
+        "manifest",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:entity:mcp_server:github-mcp",
+      "type": "service",
+      "name": "GitHub MCP",
+      "filePath": "library/mcps/github-mcp/manifest.json",
+      "summary": "Global MCP server definition for GitHub-backed repository operations distributed as configuration fragments for multiple coding tools.",
+      "tags": [
+        "library-item",
+        "mcp",
+        "service",
+        "github"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:library/mcps/github-mcp/server.json",
+      "type": "config",
+      "name": "server.json",
+      "filePath": "library/mcps/github-mcp/server.json",
+      "summary": "Concrete MCP server transport and command configuration referenced by the GitHub MCP manifest.",
+      "tags": [
+        "config",
+        "mcp",
+        "json",
+        "runtime-config"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:library/skills/python-test-fix/SKILL.md",
+      "type": "document",
+      "name": "SKILL.md",
+      "filePath": "library/skills/python-test-fix/SKILL.md",
+      "summary": "Skill instructions for minimally fixing failing Python tests by diagnosing failures, applying focused corrections, and rerunning affected tests.",
+      "tags": [
+        "docs",
+        "library-item",
+        "skill",
+        "python",
+        "testing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:library/skills/python-test-fix/manifest.json",
+      "type": "config",
+      "name": "manifest.json",
+      "filePath": "library/skills/python-test-fix/manifest.json",
+      "summary": "Manifest describing the Python Test Fix skill, including supported targets, tool requirements, and its entry instruction file.",
+      "tags": [
+        "config",
+        "library-item",
+        "skill",
+        "manifest",
+        "json"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:entity:skill:python-test-fix",
+      "type": "document",
+      "name": "Python Test Fix",
+      "filePath": "library/skills/python-test-fix/manifest.json",
+      "summary": "Workspace-scoped reusable skill that guides AI tools to diagnose and repair failing Python tests with minimal intervention.",
+      "tags": [
+        "library-item",
+        "skill",
+        "python",
+        "testing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:pyproject.toml",
+      "type": "config",
+      "name": "pyproject.toml",
+      "filePath": "pyproject.toml",
+      "summary": "Python project manifest defining package metadata, dependencies, CLI entry points, build backend, setuptools package discovery, and Ruff configuration.",
+      "tags": [
+        "config",
+        "python",
+        "packaging",
+        "toml"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/agentbox/__main__.py",
+      "type": "module",
+      "name": "__main__.py",
+      "filePath": "src/agentbox/__main__.py",
+      "summary": "Module entry point that delegates python -m agentbox execution to the main application launcher.",
+      "tags": [
+        "code",
+        "python",
+        "entrypoint"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/agentbox/app.py",
+      "type": "module",
+      "name": "app.py",
+      "filePath": "src/agentbox/app.py",
+      "summary": "Main GUI application controller that initializes the library workspace, coordinates rendering, import/export operations, validation, and user interactions through the main window.",
+      "tags": [
+        "code",
+        "python",
+        "gui",
+        "controller",
+        "pyside6"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/agentbox/app.py:EclipseApp",
+      "type": "class",
+      "name": "EclipseApp",
+      "filePath": "src/agentbox/app.py",
+      "summary": "QMainWindow-based application controller that owns library state, renderer setup, UI wiring, preview generation, exporting, deletion, and import workflows.",
+      "tags": [
+        "python",
+        "class",
+        "gui",
+        "controller"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/app.py:EclipseApp.__init__",
+      "type": "function",
+      "name": "EclipseApp.__init__",
+      "filePath": "src/agentbox/app.py",
+      "summary": "Initializes the main window, ensures library directory structure exists, constructs the template renderer and UI, and triggers the initial library load.",
+      "tags": [
+        "python",
+        "method",
+        "initialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/app.py:EclipseApp.reload_library",
+      "type": "function",
+      "name": "EclipseApp.reload_library",
+      "filePath": "src/agentbox/app.py",
+      "summary": "Scans library items from disk, validates them, updates status text, and repopulates the library panel; reports fatal load errors through a message box.",
+      "tags": [
+        "python",
+        "method",
+        "library",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/app.py:EclipseApp.on_item_selected",
+      "type": "function",
+      "name": "EclipseApp.on_item_selected",
+      "filePath": "src/agentbox/app.py",
+      "summary": "Stores the selected library item, updates status text, and refreshes the preview for the current export target.",
+      "tags": [
+        "python",
+        "method",
+        "ui-event"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/app.py:EclipseApp.update_preview",
+      "type": "function",
+      "name": "EclipseApp.update_preview",
+      "filePath": "src/agentbox/app.py",
+      "summary": "Performs a dry-run template render for the selected item and active target to populate the preview panel without writing export files.",
+      "tags": [
+        "python",
+        "method",
+        "rendering",
+        "preview"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/app.py:EclipseApp.on_export_selected",
+      "type": "function",
+      "name": "EclipseApp.on_export_selected",
+      "filePath": "src/agentbox/app.py",
+      "summary": "Validates the selected item, instantiates the target-specific exporter, writes exported files to the per-item export directory, and optionally opens the folder in Finder.",
+      "tags": [
+        "python",
+        "method",
+        "export",
+        "ui-event"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/app.py:EclipseApp.on_item_delete_requested",
+      "type": "function",
+      "name": "EclipseApp.on_item_delete_requested",
+      "filePath": "src/agentbox/app.py",
+      "summary": "Confirms and performs permanent deletion of a library item, then reloads the library view.",
+      "tags": [
+        "python",
+        "method",
+        "delete",
+        "ui-event"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/app.py:EclipseApp.on_github_import",
+      "type": "function",
+      "name": "EclipseApp.on_github_import",
+      "filePath": "src/agentbox/app.py",
+      "summary": "Starts a GitHub import, handles warning-only results, and forwards successful detections for user confirmation and saving.",
+      "tags": [
+        "python",
+        "method",
+        "import",
+        "github"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/app.py:EclipseApp._process_import_result",
+      "type": "function",
+      "name": "EclipseApp._process_import_result",
+      "filePath": "src/agentbox/app.py",
+      "summary": "Builds an item-detection summary dialog and, when approved, saves each detected import result into the local library before reloading the UI.",
+      "tags": [
+        "python",
+        "method",
+        "import",
+        "persistence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/agentbox/exporters/__init__.py",
+      "type": "module",
+      "name": "__init__.py",
+      "filePath": "src/agentbox/exporters/__init__.py",
+      "summary": "Exporter package registry that imports all concrete exporters and maps target names to their implementation classes.",
+      "tags": [
+        "code",
+        "python",
+        "exporters",
+        "registry"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/exporters/__init__.py:EXPORTER_CLASSES",
+      "type": "function",
+      "name": "EXPORTER_CLASSES",
+      "filePath": "src/agentbox/exporters/__init__.py",
+      "summary": "Central mapping from export target identifiers to concrete exporter classes used by the application controller.",
+      "tags": [
+        "python",
+        "registry",
+        "exporters"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/agentbox/exporters/base.py",
+      "type": "module",
+      "name": "base.py",
+      "filePath": "src/agentbox/exporters/base.py",
+      "summary": "Abstract exporter base module defining the shared exporter interface and helper methods for writing files and reading sidecar content.",
+      "tags": [
+        "code",
+        "python",
+        "exporters",
+        "base-class"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/agentbox/exporters/base.py:BaseExporter",
+      "type": "class",
+      "name": "BaseExporter",
+      "filePath": "src/agentbox/exporters/base.py",
+      "summary": "Common exporter superclass that stores the template renderer, defines the export contract, and provides reusable file IO helpers.",
+      "tags": [
+        "python",
+        "class",
+        "exporters",
+        "abstract"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/exporters/base.py:BaseExporter.__init__",
+      "type": "function",
+      "name": "BaseExporter.__init__",
+      "filePath": "src/agentbox/exporters/base.py",
+      "summary": "Captures the shared template renderer used by concrete exporters.",
+      "tags": [
+        "python",
+        "method",
+        "initialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/exporters/base.py:BaseExporter.export_item",
+      "type": "function",
+      "name": "BaseExporter.export_item",
+      "filePath": "src/agentbox/exporters/base.py",
+      "summary": "Abstract export operation that concrete exporters implement to write target-specific file layouts for a library item.",
+      "tags": [
+        "python",
+        "method",
+        "abstract",
+        "export"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/exporters/base.py:BaseExporter.write_text",
+      "type": "function",
+      "name": "BaseExporter.write_text",
+      "filePath": "src/agentbox/exporters/base.py",
+      "summary": "Helper that ensures parent directories exist, normalizes trailing newlines, and writes UTF-8 text to disk.",
+      "tags": [
+        "python",
+        "method",
+        "io"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/exporters/base.py:BaseExporter._read_sidecar",
+      "type": "function",
+      "name": "BaseExporter._read_sidecar",
+      "filePath": "src/agentbox/exporters/base.py",
+      "summary": "Reads optional sidecar content from a library item's root directory when the referenced file exists.",
+      "tags": [
+        "python",
+        "method",
+        "io",
+        "library"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/agentbox/exporters/claude_code.py",
+      "type": "module",
+      "name": "claude_code.py",
+      "filePath": "src/agentbox/exporters/claude_code.py",
+      "summary": "Claude Code exporter that writes docs, agents, MCP server configs, and skill files into the directory structure expected by Claude Code.",
+      "tags": [
+        "code",
+        "python",
+        "exporters",
+        "claude-code"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/agentbox/exporters/claude_code.py:ClaudeCodeExporter",
+      "type": "class",
+      "name": "ClaudeCodeExporter",
+      "filePath": "src/agentbox/exporters/claude_code.py",
+      "summary": "Concrete exporter for Claude Code that renders or copies library items into .claude-specific output paths.",
+      "tags": [
+        "python",
+        "class",
+        "exporter",
+        "claude-code"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/exporters/claude_code.py:ClaudeCodeExporter.export_item",
+      "type": "function",
+      "name": "ClaudeCodeExporter.export_item",
+      "filePath": "src/agentbox/exporters/claude_code.py",
+      "summary": "Exports docs, agents, MCP definitions, and skill files to Claude Code's expected layout using target-aware render rules.",
+      "tags": [
+        "python",
+        "method",
+        "export",
+        "claude-code"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/exporters/claude_code.py:ClaudeCodeExporter._render_as_for_target",
+      "type": "function",
+      "name": "ClaudeCodeExporter._render_as_for_target",
+      "filePath": "src/agentbox/exporters/claude_code.py",
+      "summary": "Finds the render mode declared for a specific target in a library item's render metadata.",
+      "tags": [
+        "python",
+        "method",
+        "helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/exporters/claude_code.py:ClaudeCodeExporter._has_render",
+      "type": "function",
+      "name": "ClaudeCodeExporter._has_render",
+      "filePath": "src/agentbox/exporters/claude_code.py",
+      "summary": "Checks whether a library item declares a particular render mode for the specified target.",
+      "tags": [
+        "python",
+        "method",
+        "helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/agentbox/exporters/codex.py",
+      "type": "module",
+      "name": "codex.py",
+      "filePath": "src/agentbox/exporters/codex.py",
+      "summary": "Codex exporter that renders docs, agent files, skills, resources, and MCP definitions into Codex-compatible locations.",
+      "tags": [
+        "code",
+        "python",
+        "exporters",
+        "codex"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/agentbox/exporters/codex.py:CodexExporter",
+      "type": "class",
+      "name": "CodexExporter",
+      "filePath": "src/agentbox/exporters/codex.py",
+      "summary": "Concrete exporter for Codex that combines rendered metadata with copied skill resources under the .codex directory.",
+      "tags": [
+        "python",
+        "class",
+        "exporter",
+        "codex"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/exporters/codex.py:CodexExporter.export_item",
+      "type": "function",
+      "name": "CodexExporter.export_item",
+      "filePath": "src/agentbox/exporters/codex.py",
+      "summary": "Exports documentation, agent definitions, skills with resources, and MCP server configs to Codex-specific output paths.",
+      "tags": [
+        "python",
+        "method",
+        "export",
+        "codex"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/agentbox/exporters/cursor.py",
+      "type": "module",
+      "name": "cursor.py",
+      "filePath": "src/agentbox/exporters/cursor.py",
+      "summary": "Cursor exporter that writes AGENTS documentation and rule files, honoring render output path overrides when present.",
+      "tags": [
+        "code",
+        "python",
+        "exporters",
+        "cursor"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/agentbox/exporters/cursor.py:CursorExporter",
+      "type": "class",
+      "name": "CursorExporter",
+      "filePath": "src/agentbox/exporters/cursor.py",
+      "summary": "Concrete exporter for Cursor that maps docs, agents, and rules into Cursor-compatible files.",
+      "tags": [
+        "python",
+        "class",
+        "exporter",
+        "cursor"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/exporters/cursor.py:CursorExporter.export_item",
+      "type": "function",
+      "name": "CursorExporter.export_item",
+      "filePath": "src/agentbox/exporters/cursor.py",
+      "summary": "Exports AGENTS content for docs or agents and emits rule files to default or overridden Cursor rule paths.",
+      "tags": [
+        "python",
+        "method",
+        "export",
+        "cursor"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/agentbox/exporters/opencode.py",
+      "type": "module",
+      "name": "opencode.py",
+      "filePath": "src/agentbox/exporters/opencode.py",
+      "summary": "Provisional OpenCode exporter that writes docs, agent files, and MCP configs to currently assumed directory names.",
+      "tags": [
+        "code",
+        "python",
+        "exporters",
+        "opencode"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/agentbox/exporters/opencode.py:OpenCodeExporter",
+      "type": "class",
+      "name": "OpenCodeExporter",
+      "filePath": "src/agentbox/exporters/opencode.py",
+      "summary": "Concrete exporter for OpenCode with provisional path conventions for agent and MCP outputs.",
+      "tags": [
+        "python",
+        "class",
+        "exporter",
+        "opencode"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/exporters/opencode.py:OpenCodeExporter.export_item",
+      "type": "function",
+      "name": "OpenCodeExporter.export_item",
+      "filePath": "src/agentbox/exporters/opencode.py",
+      "summary": "Exports documentation, agent definitions, and MCP server configs using provisional OpenCode file layout assumptions.",
+      "tags": [
+        "python",
+        "method",
+        "export",
+        "opencode"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/agentbox/exporters/windsurf.py",
+      "type": "module",
+      "name": "windsurf.py",
+      "filePath": "src/agentbox/exporters/windsurf.py",
+      "summary": "Windsurf exporter that emits AGENTS docs, rules, workflows, and MCP server definitions into Windsurf-specific directories.",
+      "tags": [
+        "code",
+        "python",
+        "exporters",
+        "windsurf"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/agentbox/exporters/windsurf.py:WindsurfExporter",
+      "type": "class",
+      "name": "WindsurfExporter",
+      "filePath": "src/agentbox/exporters/windsurf.py",
+      "summary": "Concrete exporter for Windsurf that renders multiple library item types into .windsurf folders.",
+      "tags": [
+        "python",
+        "class",
+        "exporter",
+        "windsurf"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/agentbox/exporters/windsurf.py:WindsurfExporter.export_item",
+      "type": "function",
+      "name": "WindsurfExporter.export_item",
+      "filePath": "src/agentbox/exporters/windsurf.py",
+      "summary": "Exports docs or agents as AGENTS.md plus rules, workflows, and MCP configs into Windsurf-specific output locations.",
+      "tags": [
+        "python",
+        "method",
+        "export",
+        "windsurf"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/agentbox/importers/__init__.py",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/importers/__init__.py",
+      "summary": "Re-exports importer models and import workflow helpers as the public importers package API.",
+      "filePath": "src/agentbox/importers/__init__.py",
+      "tags": [
+        "Python",
+        "agentbox.importers",
+        "package barrel",
+        "code"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/importers/base.py",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/importers/base.py",
+      "summary": "Re-exports import-related dataclasses from the shared models module for importer-local consumption.",
+      "filePath": "src/agentbox/importers/base.py",
+      "tags": [
+        "Python",
+        "agentbox.importers.base",
+        "model alias module",
+        "code"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/importers/github_url.py",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/importers/github_url.py",
+      "summary": "Clones a GitHub repository into a temporary directory, scans it for supported items, and reports warnings on failure.",
+      "filePath": "src/agentbox/importers/github_url.py",
+      "tags": [
+        "Python",
+        "agentbox.importers.github_url",
+        "github importer",
+        "code"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/importers/github_url.py:handle_github_import",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "handle_github_import",
+      "summary": "Normalizes GitHub URLs, performs a shallow git clone into a temp folder, then delegates content detection to scan_path.",
+      "filePath": "src/agentbox/importers/github_url.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/importers/local_drop.py",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/importers/local_drop.py",
+      "summary": "Handles local file or directory imports by validating the dropped path and scanning it for supported items.",
+      "filePath": "src/agentbox/importers/local_drop.py",
+      "tags": [
+        "Python",
+        "agentbox.importers.local_drop",
+        "local importer",
+        "code"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/importers/local_drop.py:handle_local_drop",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "handle_local_drop",
+      "summary": "Resolves a dropped path, returns a warning result for missing paths, and otherwise delegates to scan_path.",
+      "filePath": "src/agentbox/importers/local_drop.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/importers/save_to_library.py",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/importers/save_to_library.py",
+      "summary": "Transforms detected imported content into Eclipse library folders, copies sidecar files, builds manifests, and persists them.",
+      "filePath": "src/agentbox/importers/save_to_library.py",
+      "tags": [
+        "Python",
+        "agentbox.importers.save_to_library",
+        "import persistence",
+        "code"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/importers/save_to_library.py:slugify",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "slugify",
+      "summary": "Converts arbitrary names into filesystem-safe library IDs using lowercase normalization and restricted characters.",
+      "filePath": "src/agentbox/importers/save_to_library.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/importers/save_to_library.py:save_detected_to_library",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "save_detected_to_library",
+      "summary": "Creates a destination folder for a detected item, copies canonical content files by type, synthesizes a LibraryItem manifest, and saves it to disk.",
+      "filePath": "src/agentbox/importers/save_to_library.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/importers/scanner.py",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/importers/scanner.py",
+      "summary": "Walks directories, skips junk folders, heuristically detects supported library item types, and returns structured import results.",
+      "filePath": "src/agentbox/importers/scanner.py",
+      "tags": [
+        "Python",
+        "agentbox.importers.scanner",
+        "content scanner",
+        "code"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/importers/scanner.py:_is_under_named_dir",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "_is_under_named_dir",
+      "summary": "Checks whether a path contains a named directory segment; defined as a utility but unused in this file.",
+      "filePath": "src/agentbox/importers/scanner.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/importers/scanner.py:_looks_like_mcp_json",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "_looks_like_mcp_json",
+      "summary": "Reads a JSON file and uses command, args, and transport keys to classify it as an MCP server definition.",
+      "filePath": "src/agentbox/importers/scanner.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/importers/scanner.py:scan_path",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "scan_path",
+      "summary": "Recursively scans a root path with directory pruning, detects agents, skills, docs, rules, workflows, and MCP JSON files, and returns sorted detection results.",
+      "filePath": "src/agentbox/importers/scanner.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/main.py",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/main.py",
+      "summary": "Bootstraps the Qt application, creates the top-level Eclipse app controller, shows the main window, and starts the event loop.",
+      "filePath": "src/agentbox/main.py",
+      "tags": [
+        "Python",
+        "agentbox.main",
+        "application entrypoint",
+        "code"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/main.py:main",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "main",
+      "summary": "Creates a QApplication, sets app metadata, instantiates EclipseApp, displays it, and exits with the Qt event loop result.",
+      "filePath": "src/agentbox/main.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/models.py",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/models.py",
+      "summary": "Defines core library, rendering, and importer dataclasses plus literal type aliases used across storage, validation, rendering, and import flows.",
+      "filePath": "src/agentbox/models.py",
+      "tags": [
+        "Python",
+        "agentbox.models",
+        "domain model definitions",
+        "code"
+      ]
+    },
+    {
+      "id": "class:src/agentbox/models.py:RenderTarget",
+      "type": "class",
+      "complexity": "moderate",
+      "name": "RenderTarget",
+      "summary": "Describes how a library item should render for a specific export target, including output path overrides.",
+      "filePath": "src/agentbox/models.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "class:src/agentbox/models.py:Requirements",
+      "type": "class",
+      "complexity": "moderate",
+      "name": "Requirements",
+      "summary": "Captures required shell commands and environment variables for an item.",
+      "filePath": "src/agentbox/models.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "class:src/agentbox/models.py:Metadata",
+      "type": "class",
+      "complexity": "moderate",
+      "name": "Metadata",
+      "summary": "Tracks author and created/updated timestamps for persisted items.",
+      "filePath": "src/agentbox/models.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "class:src/agentbox/models.py:LibraryItem",
+      "type": "class",
+      "complexity": "moderate",
+      "name": "LibraryItem",
+      "summary": "Canonical neutral representation of a library item that flows through storage, validation, rendering, and export layers.",
+      "filePath": "src/agentbox/models.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "class:src/agentbox/models.py:DetectedItem",
+      "type": "class",
+      "complexity": "moderate",
+      "name": "DetectedItem",
+      "summary": "Represents a candidate item discovered during import scanning before it is saved into the library.",
+      "filePath": "src/agentbox/models.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "class:src/agentbox/models.py:ImportResult",
+      "type": "class",
+      "complexity": "moderate",
+      "name": "ImportResult",
+      "summary": "Carries detected import candidates and warnings produced by a local or GitHub scan.",
+      "filePath": "src/agentbox/models.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/paths.py",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/paths.py",
+      "summary": "Provides canonical filesystem locations for project roots, library storage, exports, templates, backups, and per-target export directories.",
+      "filePath": "src/agentbox/paths.py",
+      "tags": [
+        "Python",
+        "agentbox.paths",
+        "path helpers",
+        "code"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/paths.py:project_root",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "project_root",
+      "summary": "Computes the repository root by walking two directories up from paths.py.",
+      "filePath": "src/agentbox/paths.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/paths.py:library_root",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "library_root",
+      "summary": "Returns the canonical library directory beneath the project root.",
+      "filePath": "src/agentbox/paths.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/paths.py:exports_root",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "exports_root",
+      "summary": "Returns the disposable exports output directory beneath the project root.",
+      "filePath": "src/agentbox/paths.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/paths.py:templates_root",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "templates_root",
+      "summary": "Returns the package-local Jinja2 templates directory.",
+      "filePath": "src/agentbox/paths.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/paths.py:backups_root",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "backups_root",
+      "summary": "Returns the backups directory used for optional library snapshots.",
+      "filePath": "src/agentbox/paths.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/paths.py:target_export_dir",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "target_export_dir",
+      "summary": "Builds the export output directory path for a specific target tool.",
+      "filePath": "src/agentbox/paths.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/render.py",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/render.py",
+      "summary": "Wraps a Jinja2 environment to render library items into target-specific output formats with shared context.",
+      "filePath": "src/agentbox/render.py",
+      "tags": [
+        "Python",
+        "agentbox.render",
+        "template rendering",
+        "code"
+      ]
+    },
+    {
+      "id": "class:src/agentbox/render.py:TemplateRenderer",
+      "type": "class",
+      "complexity": "moderate",
+      "name": "TemplateRenderer",
+      "summary": "Creates and manages a Jinja2 environment for rendering item templates and checking template availability.",
+      "filePath": "src/agentbox/render.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/render.py:TemplateRenderer.__init__",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "TemplateRenderer.__init__",
+      "summary": "Initializes the template renderer with a file-system loader and strict Jinja2 undefined handling.",
+      "filePath": "src/agentbox/render.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/render.py:TemplateRenderer.render",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "TemplateRenderer.render",
+      "summary": "Loads a template, constructs a normalized context from a LibraryItem, merges optional extras, and returns newline-normalized rendered text.",
+      "filePath": "src/agentbox/render.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/render.py:TemplateRenderer.template_exists",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "TemplateRenderer.template_exists",
+      "summary": "Checks whether a template is available without propagating TemplateNotFound.",
+      "filePath": "src/agentbox/render.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/storage.py",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/storage.py",
+      "summary": "Loads, saves, scans, renames, and deletes library items and their manifests on disk.",
+      "filePath": "src/agentbox/storage.py",
+      "tags": [
+        "Python",
+        "agentbox.storage",
+        "library persistence",
+        "code"
+      ]
+    },
+    {
+      "id": "concept:src/agentbox/storage.py:TYPE_DIRS",
+      "type": "concept",
+      "complexity": "moderate",
+      "name": "TYPE_DIRS",
+      "summary": "Maps canonical item types to their on-disk library directory names.",
+      "filePath": "src/agentbox/storage.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/storage.py:load_manifest",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "load_manifest",
+      "summary": "Deserializes a manifest JSON file into a fully constructed LibraryItem with typed nested metadata and requirements.",
+      "filePath": "src/agentbox/storage.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/storage.py:save_manifest",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "save_manifest",
+      "summary": "Serializes a LibraryItem to manifest.json using atomic tmp-file replacement and timestamp refresh.",
+      "filePath": "src/agentbox/storage.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/storage.py:scan_library",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "scan_library",
+      "summary": "Finds every manifest.json under the library root, loads items, warns on failures, and returns sorted results.",
+      "filePath": "src/agentbox/storage.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/storage.py:item_manifest_path",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "item_manifest_path",
+      "summary": "Resolves an item's manifest path from its root directory and fails if the item was not loaded from disk.",
+      "filePath": "src/agentbox/storage.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/storage.py:save_item",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "save_item",
+      "summary": "Persists updates for an existing item by saving to its manifest path.",
+      "filePath": "src/agentbox/storage.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/storage.py:delete_item",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "delete_item",
+      "summary": "Moves an item's directory to the macOS Trash using Finder via AppleScript.",
+      "filePath": "src/agentbox/storage.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/storage.py:rename_item_dir",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "rename_item_dir",
+      "summary": "Renames an item's library directory, updates its id and root_dir, and saves the updated manifest.",
+      "filePath": "src/agentbox/storage.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/templates/AGENTS.md.j2",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/templates/AGENTS.md.j2",
+      "summary": "Renders AGENTS.md output with purpose, optional instructions, constraints, invocation text, required tools, and tags.",
+      "filePath": "src/agentbox/templates/AGENTS.md.j2",
+      "tags": [
+        "Jinja2",
+        "agent instructions markdown",
+        "markup"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/templates/CLAUDE.md.j2",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/templates/CLAUDE.md.j2",
+      "summary": "Renders CLAUDE.md output combining description or content with optional behavior, rules, commands, and environment requirements.",
+      "filePath": "src/agentbox/templates/CLAUDE.md.j2",
+      "tags": [
+        "Jinja2",
+        "project instructions markdown",
+        "markup"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/templates/README.md.j2",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/templates/README.md.j2",
+      "summary": "Renders README content with description, overview, required tools, environment variables, tags, and Eclipse attribution footer.",
+      "filePath": "src/agentbox/templates/README.md.j2",
+      "tags": [
+        "Jinja2",
+        "readme markdown",
+        "markup"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/templates/claude_agent.md.j2",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/templates/claude_agent.md.j2",
+      "summary": "Renders a Claude-targeted agent file from instructions or description plus optional constraints and invocation text.",
+      "filePath": "src/agentbox/templates/claude_agent.md.j2",
+      "tags": [
+        "Jinja2",
+        "claude agent markdown",
+        "markup"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/templates/codex_agent.md.j2",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/templates/codex_agent.md.j2",
+      "summary": "Renders a Codex-targeted agent file with instructions, constraints, and required tools.",
+      "filePath": "src/agentbox/templates/codex_agent.md.j2",
+      "tags": [
+        "Jinja2",
+        "codex agent markdown",
+        "markup"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/templates/cursor_rule.mdc.j2",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/templates/cursor_rule.mdc.j2",
+      "summary": "Renders Cursor rule files with frontmatter metadata and optional rule constraints.",
+      "filePath": "src/agentbox/templates/cursor_rule.mdc.j2",
+      "tags": [
+        "Jinja2",
+        "cursor rule markdown",
+        "markup"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/templates/mcp_server.json.j2",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/templates/mcp_server.json.j2",
+      "summary": "Renders JSON configuration fragments for MCP servers using item identity, transport, command, args, and environment data.",
+      "filePath": "src/agentbox/templates/mcp_server.json.j2",
+      "tags": [
+        "Jinja2",
+        "mcp server json",
+        "markup"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/templates/windsurf_workflow.md.j2",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/templates/windsurf_workflow.md.j2",
+      "summary": "Renders Windsurf workflow markdown with instructions, numbered steps, and optional notes.",
+      "filePath": "src/agentbox/templates/windsurf_workflow.md.j2",
+      "tags": [
+        "Jinja2",
+        "windsurf workflow markdown",
+        "markup"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/ui/main_window.py",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/ui/main_window.py",
+      "summary": "Defines the main Qt widgets for import controls, library list management, item inspection, preview display, and overall window layout.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "Python",
+        "agentbox.ui.main_window",
+        "main UI composition",
+        "code"
+      ]
+    },
+    {
+      "id": "class:src/agentbox/ui/main_window.py:ImportBar",
+      "type": "class",
+      "complexity": "moderate",
+      "name": "ImportBar",
+      "summary": "Top-bar widget for GitHub URL input and drag-and-drop affordance, emitting import requests.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:ImportBar.__init__",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "ImportBar.__init__",
+      "summary": "Builds URL input, import button, and drop-zone label UI for import actions.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:ImportBar._on_click",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "ImportBar._on_click",
+      "summary": "Emits the entered GitHub URL when the import button is clicked and the input is non-empty.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "class:src/agentbox/ui/main_window.py:LibraryListPanel",
+      "type": "class",
+      "complexity": "moderate",
+      "name": "LibraryListPanel",
+      "summary": "Left-side library panel that lists items and offers refresh, reveal, and delete actions via the app controller.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:LibraryListPanel.__init__",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "LibraryListPanel.__init__",
+      "summary": "Builds the library list widget and management toolbar.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:LibraryListPanel.populate",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "LibraryListPanel.populate",
+      "summary": "Clears and repopulates the list widget with library item names and types.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:LibraryListPanel._on_selection",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "LibraryListPanel._on_selection",
+      "summary": "Forwards the currently selected item to the application controller.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:LibraryListPanel._on_reveal",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "LibraryListPanel._on_reveal",
+      "summary": "Opens the selected item's root directory in the system file browser.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:LibraryListPanel._on_delete",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "LibraryListPanel._on_delete",
+      "summary": "Delegates deletion of the selected item to the application controller.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:LibraryListPanel.current_item",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "LibraryListPanel.current_item",
+      "summary": "Returns the currently selected LibraryItem by row index if the panel's backing item list is available.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "class:src/agentbox/ui/main_window.py:EditorPanel",
+      "type": "class",
+      "complexity": "moderate",
+      "name": "EditorPanel",
+      "summary": "Middle panel that shows a pretty-printed JSON view of the selected library item's manifest data.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:EditorPanel.__init__",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "EditorPanel.__init__",
+      "summary": "Builds the read-only manifest detail viewer UI.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:EditorPanel.show_item",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "EditorPanel.show_item",
+      "summary": "Serializes a LibraryItem to formatted JSON text and displays it in the editor area.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "class:src/agentbox/ui/main_window.py:PreviewPanel",
+      "type": "class",
+      "complexity": "moderate",
+      "name": "PreviewPanel",
+      "summary": "Right-side panel that shows rendered export preview text.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:PreviewPanel.__init__",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "PreviewPanel.__init__",
+      "summary": "Builds the read-only preview text area UI.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:PreviewPanel.set_content",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "PreviewPanel.set_content",
+      "summary": "Updates the preview area with rendered export content.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "class:src/agentbox/ui/main_window.py:MainWindowWidget",
+      "type": "class",
+      "complexity": "moderate",
+      "name": "MainWindowWidget",
+      "summary": "Composes the import bar, target toolbar, three-pane library/editor/preview layout, and status bar for the main UI.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:MainWindowWidget.__init__",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "MainWindowWidget.__init__",
+      "summary": "Stores the application controller reference and initializes the window UI.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:MainWindowWidget.setup_ui",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "MainWindowWidget.setup_ui",
+      "summary": "Creates the import bar, target selector, export button, split panels, and status bar, and applies the global stylesheet.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:MainWindowWidget.on_item_selected",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "MainWindowWidget.on_item_selected",
+      "summary": "Shows the selected item in the editor panel and notifies the app controller.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/ui/main_window.py:MainWindowWidget.set_status",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "MainWindowWidget.set_status",
+      "summary": "Displays a temporary status message in the window status bar.",
+      "filePath": "src/agentbox/ui/main_window.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/ui/styles.py",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/ui/styles.py",
+      "summary": "Defines the STELLAR_STYLE Qt stylesheet string used to theme the main application interface.",
+      "filePath": "src/agentbox/ui/styles.py",
+      "tags": [
+        "Python",
+        "agentbox.ui.styles",
+        "stylesheet constants",
+        "code"
+      ]
+    },
+    {
+      "id": "concept:src/agentbox/ui/styles.py:STELLAR_STYLE",
+      "type": "concept",
+      "complexity": "moderate",
+      "name": "STELLAR_STYLE",
+      "summary": "Dark, purple-accented Qt stylesheet covering widgets, lists, toolbars, status bar, inputs, buttons, labels, and drop zones.",
+      "filePath": "src/agentbox/ui/styles.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "file:src/agentbox/validators.py",
+      "type": "file",
+      "complexity": "moderate",
+      "name": "src/agentbox/validators.py",
+      "summary": "Validates library items and whole libraries for identifier format, type and target correctness, required data keys, and sidecar file presence.",
+      "filePath": "src/agentbox/validators.py",
+      "tags": [
+        "Python",
+        "agentbox.validators",
+        "validation logic",
+        "code"
+      ]
+    },
+    {
+      "id": "concept:src/agentbox/validators.py:_ID_RE",
+      "type": "concept",
+      "complexity": "moderate",
+      "name": "_ID_RE",
+      "summary": "Regular expression enforcing valid lowercase item identifiers.",
+      "filePath": "src/agentbox/validators.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "concept:src/agentbox/validators.py:VALID_ITEM_TYPES",
+      "type": "concept",
+      "complexity": "moderate",
+      "name": "VALID_ITEM_TYPES",
+      "summary": "Frozen set of canonical library item types accepted by validation.",
+      "filePath": "src/agentbox/validators.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "concept:src/agentbox/validators.py:VALID_TARGETS",
+      "type": "concept",
+      "complexity": "moderate",
+      "name": "VALID_TARGETS",
+      "summary": "Frozen set of supported export targets and the all wildcard.",
+      "filePath": "src/agentbox/validators.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "concept:src/agentbox/validators.py:VALID_RENDER_AS",
+      "type": "concept",
+      "complexity": "moderate",
+      "name": "VALID_RENDER_AS",
+      "summary": "Frozen set of allowed render_as values for render target declarations.",
+      "filePath": "src/agentbox/validators.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "concept:src/agentbox/validators.py:REQUIRED_DATA_KEYS",
+      "type": "concept",
+      "complexity": "moderate",
+      "name": "REQUIRED_DATA_KEYS",
+      "summary": "Maps item types to required keys that must be present in each item's data payload.",
+      "filePath": "src/agentbox/validators.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/validators.py:validate_item",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "validate_item",
+      "summary": "Runs single-item validation for id, name, type, targets, render mappings, required data keys, and sidecar existence.",
+      "filePath": "src/agentbox/validators.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/validators.py:_validate_sidecars",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "_validate_sidecars",
+      "summary": "Verifies that required content sidecar files exist on disk for each persisted item type.",
+      "filePath": "src/agentbox/validators.py",
+      "tags": [
+        "untagged"
+      ]
+    },
+    {
+      "id": "function:src/agentbox/validators.py:validate_library",
+      "type": "function",
+      "complexity": "moderate",
+      "name": "validate_library",
+      "summary": "Validates an entire library, including duplicate ID detection and prefixed per-item errors.",
+      "filePath": "src/agentbox/validators.py",
+      "tags": [
+        "untagged"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "module:project",
+      "target": "file:AGENTS.md",
+      "type": "contains",
+      "summary": "Project includes agent operating policy.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:project",
+      "target": "file:README.md",
+      "type": "contains",
+      "summary": "Project includes top-level documentation.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:project",
+      "target": "file:pyproject.toml",
+      "type": "contains",
+      "summary": "Project includes Python packaging and tool configuration.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:project",
+      "target": "file:Eclipse.spec",
+      "type": "contains",
+      "summary": "Project includes PyInstaller packaging configuration.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:project",
+      "target": "file:src/agentbox/app.py",
+      "type": "contains",
+      "summary": "Project contains the main application controller module.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:project",
+      "target": "file:src/agentbox/exporters/__init__.py",
+      "type": "contains",
+      "summary": "Project contains exporter registry module.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:project",
+      "target": "file:src/agentbox/exporters/base.py",
+      "type": "contains",
+      "summary": "Project contains exporter base module.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:project",
+      "target": "file:src/agentbox/exporters/claude_code.py",
+      "type": "contains",
+      "summary": "Project contains Claude Code exporter implementation.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:project",
+      "target": "file:src/agentbox/exporters/codex.py",
+      "type": "contains",
+      "summary": "Project contains Codex exporter implementation.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:project",
+      "target": "file:src/agentbox/exporters/cursor.py",
+      "type": "contains",
+      "summary": "Project contains Cursor exporter implementation.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:project",
+      "target": "file:src/agentbox/exporters/opencode.py",
+      "type": "contains",
+      "summary": "Project contains OpenCode exporter implementation.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:project",
+      "target": "file:src/agentbox/exporters/windsurf.py",
+      "type": "contains",
+      "summary": "Project contains Windsurf exporter implementation.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:project",
+      "target": "module:agent:python-bug-fixer",
+      "type": "contains",
+      "summary": "Project library includes the Python Bug Fixer agent.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:project",
+      "target": "document:entity:skill:python-test-fix",
+      "type": "contains",
+      "summary": "Project library includes the Python Test Fix skill.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:project",
+      "target": "service:entity:mcp_server:github-mcp",
+      "type": "contains",
+      "summary": "Project library includes the GitHub MCP server definition.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/__main__.py",
+      "target": "file:src/agentbox/main.py",
+      "type": "imports",
+      "summary": "Module entry point imports the main launcher.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/app.py",
+      "target": "file:src/agentbox/models.py",
+      "type": "imports",
+      "summary": "Application controller imports library and import result models.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/app.py",
+      "target": "file:src/agentbox/paths.py",
+      "type": "imports",
+      "summary": "Application controller imports path resolution helpers.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/app.py",
+      "target": "file:src/agentbox/storage.py",
+      "type": "imports",
+      "summary": "Application controller imports library scanning storage helpers.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/app.py",
+      "target": "file:src/agentbox/validators.py",
+      "type": "imports",
+      "summary": "Application controller imports validation routines.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/app.py",
+      "target": "file:src/agentbox/render.py",
+      "type": "imports",
+      "summary": "Application controller imports the template renderer.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/app.py",
+      "target": "file:src/agentbox/exporters/__init__.py",
+      "type": "imports",
+      "summary": "Application controller imports exporter registry.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/app.py",
+      "target": "file:src/agentbox/importers/__init__.py",
+      "type": "imports",
+      "summary": "Application controller imports importer entry points.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/app.py",
+      "target": "file:src/agentbox/ui/main_window.py",
+      "type": "imports",
+      "summary": "Application controller imports the main window widget.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/__init__.py",
+      "target": "file:src/agentbox/exporters/claude_code.py",
+      "type": "imports",
+      "summary": "Exporter registry imports Claude Code exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/__init__.py",
+      "target": "file:src/agentbox/exporters/codex.py",
+      "type": "imports",
+      "summary": "Exporter registry imports Codex exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/__init__.py",
+      "target": "file:src/agentbox/exporters/cursor.py",
+      "type": "imports",
+      "summary": "Exporter registry imports Cursor exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/__init__.py",
+      "target": "file:src/agentbox/exporters/opencode.py",
+      "type": "imports",
+      "summary": "Exporter registry imports OpenCode exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/__init__.py",
+      "target": "file:src/agentbox/exporters/windsurf.py",
+      "type": "imports",
+      "summary": "Exporter registry imports Windsurf exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/base.py",
+      "target": "file:src/agentbox/models.py",
+      "type": "imports",
+      "summary": "Base exporter imports the LibraryItem model.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/base.py",
+      "target": "file:src/agentbox/render.py",
+      "type": "imports",
+      "summary": "Base exporter imports the template renderer.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/claude_code.py",
+      "target": "file:src/agentbox/exporters/base.py",
+      "type": "imports",
+      "summary": "Claude Code exporter extends the base exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/claude_code.py",
+      "target": "file:src/agentbox/models.py",
+      "type": "imports",
+      "summary": "Claude Code exporter imports the LibraryItem model.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/codex.py",
+      "target": "file:src/agentbox/exporters/base.py",
+      "type": "imports",
+      "summary": "Codex exporter extends the base exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/codex.py",
+      "target": "file:src/agentbox/models.py",
+      "type": "imports",
+      "summary": "Codex exporter imports the LibraryItem model.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/cursor.py",
+      "target": "file:src/agentbox/exporters/base.py",
+      "type": "imports",
+      "summary": "Cursor exporter extends the base exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/cursor.py",
+      "target": "file:src/agentbox/models.py",
+      "type": "imports",
+      "summary": "Cursor exporter imports the LibraryItem model.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/opencode.py",
+      "target": "file:src/agentbox/exporters/base.py",
+      "type": "imports",
+      "summary": "OpenCode exporter extends the base exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/opencode.py",
+      "target": "file:src/agentbox/models.py",
+      "type": "imports",
+      "summary": "OpenCode exporter imports the LibraryItem model.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/windsurf.py",
+      "target": "file:src/agentbox/exporters/base.py",
+      "type": "imports",
+      "summary": "Windsurf exporter extends the base exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/windsurf.py",
+      "target": "file:src/agentbox/models.py",
+      "type": "imports",
+      "summary": "Windsurf exporter imports the LibraryItem model.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/app.py",
+      "target": "class:src/agentbox/app.py:EclipseApp",
+      "type": "defines",
+      "summary": "app.py defines the EclipseApp controller class.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/app.py:EclipseApp",
+      "target": "function:src/agentbox/app.py:EclipseApp.__init__",
+      "type": "defines",
+      "summary": "EclipseApp defines its initializer.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/app.py:EclipseApp",
+      "target": "function:src/agentbox/app.py:EclipseApp.reload_library",
+      "type": "defines",
+      "summary": "EclipseApp defines library reload behavior.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/app.py:EclipseApp",
+      "target": "function:src/agentbox/app.py:EclipseApp.on_item_selected",
+      "type": "defines",
+      "summary": "EclipseApp defines item selection handling.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/app.py:EclipseApp",
+      "target": "function:src/agentbox/app.py:EclipseApp.update_preview",
+      "type": "defines",
+      "summary": "EclipseApp defines preview update logic.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/app.py:EclipseApp",
+      "target": "function:src/agentbox/app.py:EclipseApp.on_export_selected",
+      "type": "defines",
+      "summary": "EclipseApp defines export execution behavior.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/app.py:EclipseApp",
+      "target": "function:src/agentbox/app.py:EclipseApp.on_item_delete_requested",
+      "type": "defines",
+      "summary": "EclipseApp defines deletion handling.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/app.py:EclipseApp",
+      "target": "function:src/agentbox/app.py:EclipseApp.on_github_import",
+      "type": "defines",
+      "summary": "EclipseApp defines GitHub import handling.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/app.py:EclipseApp",
+      "target": "function:src/agentbox/app.py:EclipseApp._process_import_result",
+      "type": "defines",
+      "summary": "EclipseApp defines import-result processing.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/base.py",
+      "target": "class:src/agentbox/exporters/base.py:BaseExporter",
+      "type": "defines",
+      "summary": "base.py defines the BaseExporter class.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/base.py:BaseExporter",
+      "target": "function:src/agentbox/exporters/base.py:BaseExporter.__init__",
+      "type": "defines",
+      "summary": "BaseExporter defines its initializer.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/base.py:BaseExporter",
+      "target": "function:src/agentbox/exporters/base.py:BaseExporter.export_item",
+      "type": "defines",
+      "summary": "BaseExporter defines the abstract export contract.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/base.py:BaseExporter",
+      "target": "function:src/agentbox/exporters/base.py:BaseExporter.write_text",
+      "type": "defines",
+      "summary": "BaseExporter defines shared text writing helper logic.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/base.py:BaseExporter",
+      "target": "function:src/agentbox/exporters/base.py:BaseExporter._read_sidecar",
+      "type": "defines",
+      "summary": "BaseExporter defines sidecar file loading helper logic.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/claude_code.py",
+      "target": "class:src/agentbox/exporters/claude_code.py:ClaudeCodeExporter",
+      "type": "defines",
+      "summary": "claude_code.py defines the ClaudeCodeExporter class.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/claude_code.py:ClaudeCodeExporter",
+      "target": "class:src/agentbox/exporters/base.py:BaseExporter",
+      "type": "extends",
+      "summary": "ClaudeCodeExporter inherits common exporter behavior from BaseExporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/claude_code.py:ClaudeCodeExporter",
+      "target": "function:src/agentbox/exporters/claude_code.py:ClaudeCodeExporter.export_item",
+      "type": "defines",
+      "summary": "ClaudeCodeExporter defines target-specific export behavior.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/claude_code.py:ClaudeCodeExporter",
+      "target": "function:src/agentbox/exporters/claude_code.py:ClaudeCodeExporter._render_as_for_target",
+      "type": "defines",
+      "summary": "ClaudeCodeExporter defines target render lookup helper.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/claude_code.py:ClaudeCodeExporter",
+      "target": "function:src/agentbox/exporters/claude_code.py:ClaudeCodeExporter._has_render",
+      "type": "defines",
+      "summary": "ClaudeCodeExporter defines render capability lookup helper.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/codex.py",
+      "target": "class:src/agentbox/exporters/codex.py:CodexExporter",
+      "type": "defines",
+      "summary": "codex.py defines the CodexExporter class.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/codex.py:CodexExporter",
+      "target": "class:src/agentbox/exporters/base.py:BaseExporter",
+      "type": "extends",
+      "summary": "CodexExporter inherits common exporter behavior from BaseExporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/codex.py:CodexExporter",
+      "target": "function:src/agentbox/exporters/codex.py:CodexExporter.export_item",
+      "type": "defines",
+      "summary": "CodexExporter defines target-specific export behavior.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/cursor.py",
+      "target": "class:src/agentbox/exporters/cursor.py:CursorExporter",
+      "type": "defines",
+      "summary": "cursor.py defines the CursorExporter class.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/cursor.py:CursorExporter",
+      "target": "class:src/agentbox/exporters/base.py:BaseExporter",
+      "type": "extends",
+      "summary": "CursorExporter inherits common exporter behavior from BaseExporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/cursor.py:CursorExporter",
+      "target": "function:src/agentbox/exporters/cursor.py:CursorExporter.export_item",
+      "type": "defines",
+      "summary": "CursorExporter defines target-specific export behavior.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/opencode.py",
+      "target": "class:src/agentbox/exporters/opencode.py:OpenCodeExporter",
+      "type": "defines",
+      "summary": "opencode.py defines the OpenCodeExporter class.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/opencode.py:OpenCodeExporter",
+      "target": "class:src/agentbox/exporters/base.py:BaseExporter",
+      "type": "extends",
+      "summary": "OpenCodeExporter inherits common exporter behavior from BaseExporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/opencode.py:OpenCodeExporter",
+      "target": "function:src/agentbox/exporters/opencode.py:OpenCodeExporter.export_item",
+      "type": "defines",
+      "summary": "OpenCodeExporter defines target-specific export behavior.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/windsurf.py",
+      "target": "class:src/agentbox/exporters/windsurf.py:WindsurfExporter",
+      "type": "defines",
+      "summary": "windsurf.py defines the WindsurfExporter class.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/windsurf.py:WindsurfExporter",
+      "target": "class:src/agentbox/exporters/base.py:BaseExporter",
+      "type": "extends",
+      "summary": "WindsurfExporter inherits common exporter behavior from BaseExporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "class:src/agentbox/exporters/windsurf.py:WindsurfExporter",
+      "target": "function:src/agentbox/exporters/windsurf.py:WindsurfExporter.export_item",
+      "type": "defines",
+      "summary": "WindsurfExporter defines target-specific export behavior.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/exporters/__init__.py",
+      "target": "function:src/agentbox/exporters/__init__.py:EXPORTER_CLASSES",
+      "type": "defines",
+      "summary": "Exporter registry module defines the EXPORTER_CLASSES map.",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/exporters/__init__.py:EXPORTER_CLASSES",
+      "target": "class:src/agentbox/exporters/claude_code.py:ClaudeCodeExporter",
+      "type": "references",
+      "summary": "Registry maps claude-code target to ClaudeCodeExporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/exporters/__init__.py:EXPORTER_CLASSES",
+      "target": "class:src/agentbox/exporters/codex.py:CodexExporter",
+      "type": "references",
+      "summary": "Registry maps codex target to CodexExporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/exporters/__init__.py:EXPORTER_CLASSES",
+      "target": "class:src/agentbox/exporters/cursor.py:CursorExporter",
+      "type": "references",
+      "summary": "Registry maps cursor target to CursorExporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/exporters/__init__.py:EXPORTER_CLASSES",
+      "target": "class:src/agentbox/exporters/opencode.py:OpenCodeExporter",
+      "type": "references",
+      "summary": "Registry maps opencode target to OpenCodeExporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/exporters/__init__.py:EXPORTER_CLASSES",
+      "target": "class:src/agentbox/exporters/windsurf.py:WindsurfExporter",
+      "type": "references",
+      "summary": "Registry maps windsurf target to WindsurfExporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/app.py:EclipseApp.on_export_selected",
+      "target": "function:src/agentbox/exporters/__init__.py:EXPORTER_CLASSES",
+      "type": "uses",
+      "summary": "Export action resolves the selected exporter class from the central registry.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:AGENTS.md",
+      "target": "file:src/agentbox/app.py",
+      "type": "documents",
+      "summary": "Agent policy constrains application behavior around paths, validation, and persistence.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:AGENTS.md",
+      "target": "file:src/agentbox/exporters/base.py",
+      "type": "documents",
+      "summary": "Agent policy requires exporters to remain pure and not manage library state.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:AGENTS.md",
+      "target": "file:src/agentbox/exporters/claude_code.py",
+      "type": "documents",
+      "summary": "Agent policy applies to Claude Code exporter behavior.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:AGENTS.md",
+      "target": "file:src/agentbox/exporters/codex.py",
+      "type": "documents",
+      "summary": "Agent policy applies to Codex exporter behavior.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:AGENTS.md",
+      "target": "file:src/agentbox/exporters/cursor.py",
+      "type": "documents",
+      "summary": "Agent policy applies to Cursor exporter behavior.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:AGENTS.md",
+      "target": "file:src/agentbox/exporters/opencode.py",
+      "type": "documents",
+      "summary": "Agent policy applies to OpenCode exporter behavior.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:AGENTS.md",
+      "target": "file:src/agentbox/exporters/windsurf.py",
+      "type": "documents",
+      "summary": "Agent policy applies to Windsurf exporter behavior.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:README.md",
+      "target": "file:src/agentbox/app.py",
+      "type": "documents",
+      "summary": "README describes the application controller's role in the library-first architecture.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:README.md",
+      "target": "file:src/agentbox/exporters/base.py",
+      "type": "documents",
+      "summary": "README describes exporter-based output generation.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:README.md",
+      "target": "file:src/agentbox/exporters/claude_code.py",
+      "type": "documents",
+      "summary": "README lists Claude Code as a supported target.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:README.md",
+      "target": "file:src/agentbox/exporters/codex.py",
+      "type": "documents",
+      "summary": "README lists Codex as a supported target.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:README.md",
+      "target": "file:src/agentbox/exporters/cursor.py",
+      "type": "documents",
+      "summary": "README lists Cursor as a supported target.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:README.md",
+      "target": "file:src/agentbox/exporters/windsurf.py",
+      "type": "documents",
+      "summary": "README lists Windsurf as a supported target.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:README.md",
+      "target": "file:src/agentbox/exporters/opencode.py",
+      "type": "documents",
+      "summary": "README lists OpenCode as a provisional supported target.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:pyproject.toml",
+      "target": "file:README.md",
+      "type": "references",
+      "summary": "Project manifest declares README.md as the package readme.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:pyproject.toml",
+      "target": "file:src/agentbox/main.py",
+      "type": "references",
+      "summary": "Project scripts expose agentbox.main:main as CLI entry points.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:Eclipse.spec",
+      "target": "file:src/agentbox/main.py",
+      "type": "references",
+      "summary": "PyInstaller package entry script is src/agentbox/main.py.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:Eclipse.spec",
+      "target": "resource:assets/Eclipse.icns",
+      "type": "references",
+      "summary": "PyInstaller bundle uses the Eclipse.icns icon asset.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:Eclipse.spec",
+      "target": "file:src/agentbox/exporters/claude_code.py",
+      "type": "references",
+      "summary": "PyInstaller hidden imports include the Claude Code exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:Eclipse.spec",
+      "target": "file:src/agentbox/exporters/codex.py",
+      "type": "references",
+      "summary": "PyInstaller hidden imports include the Codex exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:Eclipse.spec",
+      "target": "file:src/agentbox/exporters/cursor.py",
+      "type": "references",
+      "summary": "PyInstaller hidden imports include the Cursor exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:Eclipse.spec",
+      "target": "file:src/agentbox/exporters/windsurf.py",
+      "type": "references",
+      "summary": "PyInstaller hidden imports include the Windsurf exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:Eclipse.spec",
+      "target": "file:src/agentbox/exporters/opencode.py",
+      "type": "references",
+      "summary": "PyInstaller hidden imports include the OpenCode exporter.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:library/agents/python-bug-fixer/manifest.json",
+      "target": "module:agent:python-bug-fixer",
+      "type": "defines",
+      "summary": "Agent manifest defines the Python Bug Fixer library item.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:library/agents/python-bug-fixer/instructions.md",
+      "target": "module:agent:python-bug-fixer",
+      "type": "documents",
+      "summary": "Instructions file provides the Python Bug Fixer agent behavior.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:library/agents/python-bug-fixer/manifest.json",
+      "target": "file:library/agents/python-bug-fixer/instructions.md",
+      "type": "references",
+      "summary": "Agent manifest points to instructions.md as its instructions file.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:library/mcps/github-mcp/manifest.json",
+      "target": "service:entity:mcp_server:github-mcp",
+      "type": "defines",
+      "summary": "MCP manifest defines the GitHub MCP server library item.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:library/mcps/github-mcp/server.json",
+      "target": "service:entity:mcp_server:github-mcp",
+      "type": "documents",
+      "summary": "Server configuration file provides the executable transport settings for GitHub MCP.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:library/mcps/github-mcp/manifest.json",
+      "target": "file:library/mcps/github-mcp/server.json",
+      "type": "references",
+      "summary": "MCP manifest names server.json as its source configuration file.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:library/skills/python-test-fix/manifest.json",
+      "target": "document:entity:skill:python-test-fix",
+      "type": "defines",
+      "summary": "Skill manifest defines the Python Test Fix library item.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:library/skills/python-test-fix/SKILL.md",
+      "target": "document:entity:skill:python-test-fix",
+      "type": "documents",
+      "summary": "SKILL.md provides the Python Test Fix skill instructions.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:library/skills/python-test-fix/manifest.json",
+      "target": "file:library/skills/python-test-fix/SKILL.md",
+      "type": "references",
+      "summary": "Skill manifest points to SKILL.md as its entry file.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:agent:python-bug-fixer",
+      "target": "file:src/agentbox/exporters/claude_code.py",
+      "type": "rendered_by",
+      "summary": "Python Bug Fixer agent can be exported to Claude Code as an agent file.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:agent:python-bug-fixer",
+      "target": "file:src/agentbox/exporters/codex.py",
+      "type": "rendered_by",
+      "summary": "Python Bug Fixer agent can be exported to Codex as an agent file.",
+      "weight": 0.5
+    },
+    {
+      "source": "module:agent:python-bug-fixer",
+      "target": "file:src/agentbox/exporters/cursor.py",
+      "type": "rendered_by",
+      "summary": "Python Bug Fixer agent can be exported to Cursor as AGENTS content.",
+      "weight": 0.5
+    },
+    {
+      "source": "service:entity:mcp_server:github-mcp",
+      "target": "file:src/agentbox/exporters/claude_code.py",
+      "type": "rendered_by",
+      "summary": "GitHub MCP server can be exported to Claude Code as MCP config.",
+      "weight": 0.5
+    },
+    {
+      "source": "service:entity:mcp_server:github-mcp",
+      "target": "file:src/agentbox/exporters/codex.py",
+      "type": "rendered_by",
+      "summary": "GitHub MCP server can be exported to Codex as MCP config.",
+      "weight": 0.5
+    },
+    {
+      "source": "service:entity:mcp_server:github-mcp",
+      "target": "file:src/agentbox/exporters/windsurf.py",
+      "type": "rendered_by",
+      "summary": "GitHub MCP server can be exported to Windsurf as MCP config.",
+      "weight": 0.5
+    },
+    {
+      "source": "service:entity:mcp_server:github-mcp",
+      "target": "file:src/agentbox/exporters/opencode.py",
+      "type": "rendered_by",
+      "summary": "GitHub MCP server can be exported to OpenCode as MCP config.",
+      "weight": 0.5
+    },
+    {
+      "source": "document:entity:skill:python-test-fix",
+      "target": "file:src/agentbox/exporters/claude_code.py",
+      "type": "rendered_by",
+      "summary": "Python Test Fix skill can be exported to Claude Code by copying its skill file.",
+      "weight": 0.5
+    },
+    {
+      "source": "document:entity:skill:python-test-fix",
+      "target": "file:src/agentbox/exporters/codex.py",
+      "type": "rendered_by",
+      "summary": "Python Test Fix skill can be exported to Codex with optional resources.",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/importers/__init__.py",
+      "target": "file:src/agentbox/importers/base.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/importers/__init__.py",
+      "target": "file:src/agentbox/importers/github_url.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/importers/__init__.py",
+      "target": "file:src/agentbox/importers/local_drop.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/importers/__init__.py",
+      "target": "file:src/agentbox/importers/save_to_library.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/importers/__init__.py",
+      "target": "file:src/agentbox/importers/scanner.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/importers/base.py",
+      "target": "file:src/agentbox/models.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/importers/github_url.py",
+      "target": "file:src/agentbox/importers/scanner.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/importers/github_url.py",
+      "target": "file:src/agentbox/importers/base.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/importers/github_url.py:handle_github_import",
+      "target": "function:src/agentbox/importers/scanner.py:scan_path",
+      "type": "calls",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/importers/local_drop.py",
+      "target": "file:src/agentbox/importers/scanner.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/importers/local_drop.py",
+      "target": "file:src/agentbox/importers/base.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/importers/local_drop.py:handle_local_drop",
+      "target": "function:src/agentbox/importers/scanner.py:scan_path",
+      "type": "calls",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/importers/save_to_library.py",
+      "target": "file:src/agentbox/models.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/importers/save_to_library.py",
+      "target": "file:src/agentbox/storage.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/importers/save_to_library.py:save_detected_to_library",
+      "target": "function:src/agentbox/importers/save_to_library.py:slugify",
+      "type": "calls",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/importers/save_to_library.py:save_detected_to_library",
+      "target": "function:src/agentbox/storage.py:save_manifest",
+      "type": "calls",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/importers/save_to_library.py:save_detected_to_library",
+      "target": "concept:src/agentbox/storage.py:TYPE_DIRS",
+      "type": "uses",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/importers/save_to_library.py:save_detected_to_library",
+      "target": "class:src/agentbox/models.py:LibraryItem",
+      "type": "constructs",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/importers/save_to_library.py:save_detected_to_library",
+      "target": "class:src/agentbox/models.py:Metadata",
+      "type": "constructs",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/importers/save_to_library.py:save_detected_to_library",
+      "target": "class:src/agentbox/models.py:Requirements",
+      "type": "constructs",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/importers/scanner.py",
+      "target": "file:src/agentbox/importers/base.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/importers/scanner.py:scan_path",
+      "target": "class:src/agentbox/models.py:ImportResult",
+      "type": "constructs",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/importers/scanner.py:scan_path",
+      "target": "class:src/agentbox/models.py:DetectedItem",
+      "type": "constructs",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/importers/scanner.py:scan_path",
+      "target": "function:src/agentbox/importers/scanner.py:_looks_like_mcp_json",
+      "type": "calls",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/main.py",
+      "target": "file:src/agentbox/app.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/render.py",
+      "target": "file:src/agentbox/models.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/render.py:TemplateRenderer.render",
+      "target": "class:src/agentbox/models.py:LibraryItem",
+      "type": "uses",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/storage.py",
+      "target": "file:src/agentbox/models.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/storage.py:load_manifest",
+      "target": "class:src/agentbox/models.py:RenderTarget",
+      "type": "constructs",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/storage.py:load_manifest",
+      "target": "class:src/agentbox/models.py:Requirements",
+      "type": "constructs",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/storage.py:load_manifest",
+      "target": "class:src/agentbox/models.py:Metadata",
+      "type": "constructs",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/storage.py:load_manifest",
+      "target": "class:src/agentbox/models.py:LibraryItem",
+      "type": "constructs",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/storage.py:scan_library",
+      "target": "function:src/agentbox/storage.py:load_manifest",
+      "type": "calls",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/storage.py:save_item",
+      "target": "function:src/agentbox/storage.py:item_manifest_path",
+      "type": "calls",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/storage.py:save_item",
+      "target": "function:src/agentbox/storage.py:save_manifest",
+      "type": "calls",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/storage.py:rename_item_dir",
+      "target": "concept:src/agentbox/storage.py:TYPE_DIRS",
+      "type": "uses",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/storage.py:rename_item_dir",
+      "target": "function:src/agentbox/storage.py:save_item",
+      "type": "calls",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/ui/main_window.py",
+      "target": "file:src/agentbox/models.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/ui/main_window.py",
+      "target": "file:src/agentbox/ui/styles.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/ui/main_window.py:EditorPanel.show_item",
+      "target": "class:src/agentbox/models.py:LibraryItem",
+      "type": "uses",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/ui/main_window.py:MainWindowWidget.setup_ui",
+      "target": "concept:src/agentbox/ui/styles.py:STELLAR_STYLE",
+      "type": "uses",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/validators.py",
+      "target": "file:src/agentbox/models.py",
+      "type": "imports",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/validators.py:validate_item",
+      "target": "concept:src/agentbox/validators.py:_ID_RE",
+      "type": "uses",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/validators.py:validate_item",
+      "target": "concept:src/agentbox/validators.py:VALID_ITEM_TYPES",
+      "type": "uses",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/validators.py:validate_item",
+      "target": "concept:src/agentbox/validators.py:VALID_TARGETS",
+      "type": "uses",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/validators.py:validate_item",
+      "target": "concept:src/agentbox/validators.py:VALID_RENDER_AS",
+      "type": "uses",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/validators.py:validate_item",
+      "target": "concept:src/agentbox/validators.py:REQUIRED_DATA_KEYS",
+      "type": "uses",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/validators.py:validate_item",
+      "target": "function:src/agentbox/validators.py:_validate_sidecars",
+      "type": "calls",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/agentbox/validators.py:validate_library",
+      "target": "function:src/agentbox/validators.py:validate_item",
+      "type": "calls",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/templates/AGENTS.md.j2",
+      "target": "class:src/agentbox/models.py:LibraryItem",
+      "type": "renders",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/templates/CLAUDE.md.j2",
+      "target": "class:src/agentbox/models.py:LibraryItem",
+      "type": "renders",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/templates/README.md.j2",
+      "target": "class:src/agentbox/models.py:LibraryItem",
+      "type": "renders",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/templates/claude_agent.md.j2",
+      "target": "class:src/agentbox/models.py:LibraryItem",
+      "type": "renders",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/templates/codex_agent.md.j2",
+      "target": "class:src/agentbox/models.py:LibraryItem",
+      "type": "renders",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/templates/cursor_rule.mdc.j2",
+      "target": "class:src/agentbox/models.py:LibraryItem",
+      "type": "renders",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/templates/mcp_server.json.j2",
+      "target": "class:src/agentbox/models.py:LibraryItem",
+      "type": "renders",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/agentbox/templates/windsurf_workflow.md.j2",
+      "target": "class:src/agentbox/models.py:LibraryItem",
+      "type": "renders",
+      "weight": 0.5
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:foundation-assets-and-project-governance",
+      "name": "Foundation Assets & Project Governance",
+      "description": "Repository-level documentation, packaging metadata, legal files, and bundled binary assets that define how the project is built, distributed, and understood but do not implement runtime behavior directly.",
+      "nodeIds": [
+        "file:AGENTS.md",
+        "file:Eclipse.spec",
+        "file:LICENSE",
+        "file:README.md",
+        "file:pyproject.toml",
+        "resource:.DS_Store",
+        "resource:Icon",
+        "resource:assets/Eclipse.icns",
+        "resource:exports/.DS_Store",
+        "resource:library/.DS_Store"
+      ]
+    },
+    {
+      "id": "layer:library-content-and-workspace-data",
+      "name": "Library Content & Workspace Data",
+      "description": "The user/library-facing content stored on disk: starter agents, skills, MCP definitions, and output directories that represent the managed workspace state rather than application code.",
+      "nodeIds": [
+        "document:entity:skill:python-test-fix",
+        "file:library/agents/python-bug-fixer/instructions.md",
+        "file:library/agents/python-bug-fixer/manifest.json",
+        "file:library/mcps/github-mcp/manifest.json",
+        "file:library/mcps/github-mcp/server.json",
+        "file:library/skills/python-test-fix/SKILL.md",
+        "file:library/skills/python-test-fix/manifest.json",
+        "service:entity:mcp_server:github-mcp"
+      ]
+    },
+    {
+      "id": "layer:core-domain-model-and-paths",
+      "name": "Core Domain Model & Path Mapping",
+      "description": "Shared low-level runtime primitives that define the shape of library items and the canonical filesystem locations used by every higher layer.",
+      "nodeIds": [
+        "file:src/agentbox/models.py",
+        "file:src/agentbox/paths.py"
+      ]
+    },
+    {
+      "id": "layer:core-services-validation-storage-rendering",
+      "name": "Core Services: Validation, Storage & Rendering",
+      "description": "Reusable application services that validate item shape, load/save library content, and render tool-specific text from templates. These services implement the business rules of the library-first system without owning UI concerns.",
+      "nodeIds": [
+        "file:src/agentbox/render.py",
+        "file:src/agentbox/storage.py",
+        "file:src/agentbox/templates/AGENTS.md.j2",
+        "file:src/agentbox/templates/CLAUDE.md.j2",
+        "file:src/agentbox/templates/README.md.j2",
+        "file:src/agentbox/templates/claude_agent.md.j2",
+        "file:src/agentbox/templates/codex_agent.md.j2",
+        "file:src/agentbox/templates/cursor_rule.mdc.j2",
+        "file:src/agentbox/templates/mcp_server.json.j2",
+        "file:src/agentbox/templates/windsurf_workflow.md.j2",
+        "file:src/agentbox/validators.py"
+      ]
+    },
+    {
+      "id": "layer:integration-adapters-import-export",
+      "name": "Integration Adapters: Import & Export",
+      "description": "Boundary adapters that translate between Eclipse's internal library representation and external sources or target tools. Importers ingest outside content into the library; exporters project library items into tool-specific outputs.",
+      "nodeIds": [
+        "file:src/agentbox/exporters/__init__.py",
+        "file:src/agentbox/exporters/base.py",
+        "file:src/agentbox/exporters/claude_code.py",
+        "file:src/agentbox/exporters/codex.py",
+        "file:src/agentbox/exporters/cursor.py",
+        "file:src/agentbox/exporters/opencode.py",
+        "file:src/agentbox/exporters/windsurf.py",
+        "file:src/agentbox/importers/__init__.py",
+        "file:src/agentbox/importers/base.py",
+        "file:src/agentbox/importers/github_url.py",
+        "file:src/agentbox/importers/local_drop.py",
+        "file:src/agentbox/importers/save_to_library.py",
+        "file:src/agentbox/importers/scanner.py"
+      ]
+    },
+    {
+      "id": "layer:application-orchestration-and-ui",
+      "name": "Application Orchestration & UI",
+      "description": "Top-level desktop runtime layer that wires services and adapters into PySide6 event handling, window presentation, selection/edit flows, import/export actions, and application startup.",
+      "nodeIds": [
+        "file:src/agentbox/__main__.py",
+        "file:src/agentbox/app.py",
+        "file:src/agentbox/main.py",
+        "file:src/agentbox/ui/main_window.py",
+        "file:src/agentbox/ui/styles.py"
+      ]
+    },
+    {
+      "id": "layer:quality-and-verification",
+      "name": "Quality & Verification",
+      "description": "Testing and static-quality layer declared by project tooling and repository layout. It supports the architecture rather than participating in runtime execution.",
+      "nodeIds": []
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "1. Start at the module entry point",
+      "description": "This matches the README quick-start exactly and gives you the cleanest starting point for understanding runtime flow.",
+      "nodeIds": [
+        "file:src/agentbox/__main__.py"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "2. See how the desktop app boots",
+      "description": "This is the bridge from Python packaging into the actual GUI-driven orchestration layer.",
+      "nodeIds": [
+        "file:src/agentbox/main.py"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "3. Understand the main orchestration hub",
+      "description": "If the README says Eclipse is Library \u2192 Renderer \u2192 Exporters, this file is where those pieces are composed into a working product.",
+      "nodeIds": [
+        "file:src/agentbox/app.py"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "4. Map the visible product surface",
+      "description": "This file shows how the product presents the README architecture to a user: browse the library, inspect an item, preview its rendered form, then export it to a target tool.",
+      "nodeIds": [
+        "file:src/agentbox/ui/main_window.py"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "5. Learn the neutral core model and filesystem contract",
+      "description": "Everything else depends on this neutrality. Importers produce these models, validators inspect them, the renderer consumes them, and exporters translate them for outside tools.",
+      "nodeIds": [
+        "file:src/agentbox/models.py",
+        "file:src/agentbox/paths.py"
+      ]
+    },
+    {
+      "order": 6,
+      "title": "6. Follow the local-first library persistence story",
+      "description": "This is the concrete implementation of the README's library tier and the reason the app is local-first rather than database-backed or remote-first.",
+      "nodeIds": [
+        "file:src/agentbox/storage.py"
+      ]
+    },
+    {
+      "order": 7,
+      "title": "7. See how Eclipse protects library integrity",
+      "description": "The app validates both on initial load and before export, which keeps malformed library content from propagating into rendered tool outputs.",
+      "nodeIds": [
+        "file:src/agentbox/validators.py"
+      ]
+    },
+    {
+      "order": 8,
+      "title": "8. Understand the Jinja2 rendering engine",
+      "description": "This is the middle tier in the README architecture: the library stays tool-agnostic, and the templates translate it into each tool's expected format.",
+      "nodeIds": [
+        "file:src/agentbox/render.py",
+        "file:src/agentbox/templates/AGENTS.md.j2",
+        "file:src/agentbox/templates/CLAUDE.md.j2",
+        "file:src/agentbox/templates/README.md.j2",
+        "file:src/agentbox/templates/claude_agent.md.j2",
+        "file:src/agentbox/templates/codex_agent.md.j2",
+        "file:src/agentbox/templates/cursor_rule.mdc.j2",
+        "file:src/agentbox/templates/mcp_server.json.j2",
+        "file:src/agentbox/templates/windsurf_workflow.md.j2"
+      ]
+    },
+    {
+      "order": 9,
+      "title": "9. Compare the tool-specific export adapters",
+      "description": "This is the final tier of the README architecture. The same library item can be expressed differently depending on whether the target is Claude Code, Codex, Cursor, Windsurf, or OpenCode.",
+      "nodeIds": [
+        "file:src/agentbox/exporters/__init__.py",
+        "file:src/agentbox/exporters/base.py",
+        "file:src/agentbox/exporters/claude_code.py",
+        "file:src/agentbox/exporters/codex.py",
+        "file:src/agentbox/exporters/cursor.py",
+        "file:src/agentbox/exporters/windsurf.py",
+        "file:src/agentbox/exporters/opencode.py"
+      ]
+    },
+    {
+      "order": 10,
+      "title": "10. Trace how outside content becomes library items",
+      "description": "This closes the library-first loop. Eclipse is not only an exporter; it is also a normalizer that absorbs externally authored workspace assets into a single internal representation.",
+      "nodeIds": [
+        "file:src/agentbox/importers/__init__.py",
+        "file:src/agentbox/importers/scanner.py",
+        "file:src/agentbox/importers/local_drop.py",
+        "file:src/agentbox/importers/github_url.py",
+        "file:src/agentbox/importers/save_to_library.py"
+      ]
+    },
+    {
+      "order": 11,
+      "title": "11. Inspect the bundled library as example domain data",
+      "description": "Reading these files makes the abstract model concrete and shows what authors are expected to place in the library.",
+      "nodeIds": [
+        "file:library/agents/python-bug-fixer/manifest.json",
+        "file:library/agents/python-bug-fixer/instructions.md",
+        "file:library/skills/python-test-fix/manifest.json",
+        "file:library/skills/python-test-fix/SKILL.md",
+        "file:library/mcps/github-mcp/manifest.json",
+        "file:library/mcps/github-mcp/server.json"
+      ]
+    },
+    {
+      "order": 12,
+      "title": "12. Finish with packaging and distribution metadata",
+      "description": "These files connect the architecture to actual developer and end-user workflows: editable installs, CLI scripts, dependencies, and a PyInstaller GUI bundle.",
+      "nodeIds": [
+        "file:pyproject.toml",
+        "file:Eclipse.spec"
+      ]
+    },
+    {
+      "order": 13,
+      "title": "13. Read the repository's intended architecture in prose",
+      "description": "End your tour here to compare the code you just traced with the explicit design claims the project makes about itself.",
+      "nodeIds": [
+        "file:README.md",
+        "file:AGENTS.md"
+      ]
+    }
+  ]
+}

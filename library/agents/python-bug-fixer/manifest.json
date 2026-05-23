@@ -1,0 +1,33 @@
+{
+  "id": "python-bug-fixer",
+  "type": "agent",
+  "name": "Python Bug Fixer",
+  "version": "1.0.0",
+  "description": "Expert agent for fixing Python bugs with minimal side effects.",
+  "tags": ["python", "bugfix", "expert"],
+  "scope": "workspace",
+  "targets": ["claude-code", "codex", "cursor", "windsurf", "opencode"],
+  "renders": [
+    {"target": "claude-code", "render_as": "agent_file", "output_path": ".claude/agents/python-bug-fixer.md"},
+    {"target": "codex",       "render_as": "agent_file", "output_path": ".codex/agents/python-bug-fixer.md"},
+    {"target": "cursor",      "render_as": "AGENTS.md",  "output_path": "AGENTS.md"}
+  ],
+  "requirements": {
+    "commands": ["python3", "ruff", "pytest"],
+    "env_vars": []
+  },
+  "metadata": {
+    "author": "Razor",
+    "created_at": "2026-04-18T00:00:00Z",
+    "updated_at": "2026-04-18T00:00:00Z"
+  },
+  "data": {
+    "instructions_file": "instructions.md",
+    "constraints": [
+      "No unnecessary refactoring",
+      "Keep diffs minimal",
+      "Always run tests before claiming success"
+    ],
+    "handoff_prompt": "I have fixed the bug in {{ data.get('file_path', 'the code') }}. Please review the diff."
+  }
+}

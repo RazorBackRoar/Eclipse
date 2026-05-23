@@ -1,0 +1,57 @@
+# macOS
+.DS_Store
+**/.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+*.log
+*.tmp
+*.orig
+
+# Packaging / build artifacts
+build/
+dist/
+Clean/
+pip-wheel-metadata/
+*.spec
+!Eclipse.spec
+temp-dmg-*
+
+# Release binaries — distribute via GitHub Releases
+*.dmg
+
+# Virtual envs
+.venv/
+venv/
+
+# Workspace symlinks — machine-local, do not commit
+skills
+.agent/
+.agents/
+
+# Session backups and local task files
+AGENTS.md.backup.*
+INSTRUCTIONS.md
+
+# Tooling caches
+.ruff_cache/
+.pytest_cache/
+.ty_cache/
+
+# IDE
+.vscode/
+.idea/
+
+# Secrets
+.env.*
+!.env.example
+!.env.sample
+.security

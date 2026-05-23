@@ -1,0 +1,37 @@
+# {{ name }}
+
+{{ description }}
+
+{% if data.get("instructions") or data.get("content") %}
+## Overview
+
+{{ data.get("instructions", data.get("content", "")) }}
+
+{% endif %}
+{% if requirements.commands %}
+## Required Tools
+
+```bash
+{% for cmd in requirements.commands %}
+{{ cmd }}
+{% endfor %}
+```
+
+{% endif %}
+{% if requirements.env_vars %}
+## Required Environment Variables
+
+{% for var in requirements.env_vars %}
+- `{{ var }}`
+{% endfor %}
+
+{% endif %}
+{% if tags %}
+## Tags
+
+{{ ", ".join(tags) }}
+
+{% endif %}
+---
+
+*Managed by Eclipse AI Workspace Configuration Manager*

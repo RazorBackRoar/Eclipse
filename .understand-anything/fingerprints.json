@@ -1,0 +1,28 @@
+{
+  "warning": "Fingerprint generation skipped: repository lacks installed @understand-anything/core runtime in this environment",
+  "sourceFilePaths": [
+    "src/agentbox/__main__.py",
+    "src/agentbox/app.py",
+    "src/agentbox/exporters/__init__.py",
+    "src/agentbox/exporters/base.py",
+    "src/agentbox/exporters/claude_code.py",
+    "src/agentbox/exporters/codex.py",
+    "src/agentbox/exporters/cursor.py",
+    "src/agentbox/exporters/opencode.py",
+    "src/agentbox/exporters/windsurf.py",
+    "src/agentbox/importers/__init__.py",
+    "src/agentbox/importers/base.py",
+    "src/agentbox/importers/github_url.py",
+    "src/agentbox/importers/local_drop.py",
+    "src/agentbox/importers/save_to_library.py",
+    "src/agentbox/importers/scanner.py",
+    "src/agentbox/main.py",
+    "src/agentbox/models.py",
+    "src/agentbox/paths.py",
+    "src/agentbox/render.py",
+    "src/agentbox/storage.py",
+    "src/agentbox/ui/main_window.py",
+    "src/agentbox/ui/styles.py",
+    "src/agentbox/validators.py"
+  ]
+}

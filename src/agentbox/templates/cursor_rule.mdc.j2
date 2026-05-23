@@ -1,0 +1,14 @@
+---
+description: {{ description or name }}
+alwaysApply: false
+---
+
+{{ data.get("instructions", description) }}
+
+{% if data.get("constraints") %}
+## Rules
+
+{% for line in data["constraints"] %}
+- {{ line }}
+{% endfor %}
+{% endif %}

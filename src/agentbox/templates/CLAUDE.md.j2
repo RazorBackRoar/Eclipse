@@ -1,0 +1,38 @@
+# Project Instructions
+
+## {{ name }}
+
+{{ description or data.get("instructions", data.get("content", "")) }}
+
+{% if data.get("content_file") and data.get("content") %}
+{{ data["content"] }}
+
+{% elif data.get("instructions") %}
+## Behavior
+
+{{ data["instructions"] }}
+
+{% endif %}
+{% if data.get("constraints") %}
+## Rules
+
+{% for line in data["constraints"] %}
+- {{ line }}
+{% endfor %}
+
+{% endif %}
+{% if requirements.commands %}
+## Required Commands
+
+{% for cmd in requirements.commands %}
+- `{{ cmd }}`
+{% endfor %}
+
+{% endif %}
+{% if requirements.env_vars %}
+## Required Environment Variables
+
+{% for var in requirements.env_vars %}
+- `{{ var }}`
+{% endfor %}
+{% endif %}
