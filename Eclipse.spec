@@ -56,26 +56,33 @@ pyz = PYZ(
 exe = EXE(
     pyz,
     a.scripts,
-    a.binaries,
-    a.datas,
-    [],
+    exclude_binaries=True,            # onedir mode: binaries collected separately
     name='Eclipse',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
     upx=False,
     upx_exclude=[],
-    runtime_tmpdir=None,
-    console=False,                  # No terminal window (GUI app)
+    console=False,                    # No terminal window (GUI app)
     disable_windowed_traceback=False,
-    argv_emulation=False,           # Important for macOS: do not emulate argv
-    target_arch='arm64',            # Native Apple Silicon
-    codesign_identity=None,         # Shared build wrappers apply ad-hoc signing.
+    argv_emulation=False,             # Important for macOS: do not emulate argv
+    target_arch='arm64',              # Native Apple Silicon
+    codesign_identity=None,           # Shared build wrappers apply ad-hoc signing.
     entitlements_file=None,
 )
 
-app = BUNDLE(
+coll = COLLECT(
     exe,
+    a.binaries,
+    a.datas,
+    strip=False,
+    upx=False,
+    upx_exclude=[],
+    name='Eclipse',
+)
+
+app = BUNDLE(
+    coll,
     name='Eclipse.app',
     icon='assets/Eclipse.icns',
     bundle_identifier='com.razorbackroar.eclipse',
