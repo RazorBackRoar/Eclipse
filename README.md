@@ -1,10 +1,8 @@
 # Eclipse
 
-> Workspace context source: `/Users/home/Workspace/Apps/.code-analysis/` (`AGENTS.md`, `monorepo-analysis.md`, `essential-queries.md`).
-
 [![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](pyproject.toml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-Native-brightgreen.svg)](https://support.apple.com/en-us/HT211814)
+[![Apple Silicon](https://img.shields.io/badge/Apple%20Silicon-arm64-brightgreen.svg)](https://support.apple.com/en-us/HT211814)
 [![PySide6](https://img.shields.io/badge/PySide6-Qt6-orange.svg)](https://doc.qt.io/qtforpython/)
 
 ```text
@@ -16,108 +14,103 @@
 ╚══════╝ ╚═════╝╚══════╝╚═╝╚═╝     ╚══════╝╚══════╝
 ```
 
-> **Canonical AI Workspace Configuration Manager**
+> **AI workspace configuration manager for macOS.**
 > Centralize, version, and export AI agent configs across Claude Code, Codex, Cursor, Windsurf, and OpenCode — from a single local library.
 
 ---
 
 ## Features
 
-- **Library-First** — tool-agnostic folder-based store of agents, skills, and rules
-- **Jinja2 Rendering** — converts library objects into tool-specific file formats
-- **Multi-IDE Export** — adapters for Claude Code, Codex, Cursor, Windsurf, OpenCode
+- **Library-First** — tool-agnostic, folder-based store of agents, skills, and rules
+- **Jinja2 Rendering** — converts library objects into tool-specific file formats on export
+- **Multi-IDE Export** — adapters for Claude Code, Codex, Cursor, Windsurf, and OpenCode
 - **Import Pipeline** — scan local directories, drop files, or pull from GitHub URLs
-- **PySide6 GUI** — native macOS dark-themed interface
-- **Apple Silicon Native** — optimized for M1/M2/M3 chips
+- **Native macOS UI** — dark-themed PySide6 interface
+- **Apple Silicon Native** — arm64 build optimized for M1/M2/M3/M4 chips
 
 ---
 
 ## Installation
 
 1. Download the latest `Eclipse.dmg` from [Releases](https://github.com/RazorBackRoar/Eclipse/releases)
-2. Drag `Eclipse.app` to `/Applications`
-3. **First Launch** — ad-hoc signed build, so Gatekeeper will prompt once:
-   - Right-click `Eclipse.app` in Applications → **Open**
-   - Click **Open** in the confirmation dialog — this only needs to be done once
+2. Open the DMG and drag `Eclipse.app` to `/Applications`
+3. First launch — right-click the app → **Open** to bypass Gatekeeper on the ad-hoc signed build
+
+---
+
+## Usage
+
+1. **Import** — scan a local directory, drop files into the panel, or paste a GitHub URL
+2. **Browse** — view your agent library organized by type and tag
+3. **Export** — select a target IDE and Eclipse writes the correct config format to the right location
 
 ---
 
 ## Development
 
-This project uses `.razorcore` for build tooling.
-
-### Prerequisites
+### Requirements
 
 - Python 3.14
-- macOS 11.0+
+- macOS 12.0+
+- [uv](https://github.com/astral-sh/uv)
 
 ### Setup
 
 ```bash
-cd Apps/Eclipse
+git clone https://github.com/RazorBackRoar/Eclipse.git
+cd Eclipse
 uv sync
 uv run python -m agentbox.main
-```
-
-### Common Commands
-
-| Command | Purpose |
-|---------|---------|
-| `eclipsepush` | Bump version, lint, commit, push |
-| `eclipsebuild` | Full build → PyInstaller → DMG |
-| `razorbuild Eclipse` | Same as eclipsebuild |
-| `uv run ruff check .` | Lint |
-| `uv run ty check src --python-version 3.14` | Type check |
-| `uv run pytest tests/ -q` | Tests |
-
-### Architecture
-
-```
-src/agentbox/
-├── main.py           ← Entry point
-├── models.py         ← LibraryItem dataclass (source of truth)
-├── storage.py        ← Atomic library read/write
-├── render.py         ← Jinja2 rendering engine
-├── paths.py          ← All path resolution (use this, never ~)
-├── exporters/        ← One adapter per IDE target
-│   ├── claude_code.py
-│   ├── codex.py
-│   ├── cursor.py
-│   ├── windsurf.py
-│   └── opencode.py
-├── importers/        ← Import pipeline
-│   ├── scanner.py
-│   ├── local_drop.py
-│   ├── github_url.py
-│   └── save_to_library.py
-├── templates/        ← Jinja2 templates (bundled in Eclipse.spec)
-└── ui/               ← PySide6 GUI
 ```
 
 ### Build
 
 ```bash
-eclipsebuild
-# or
 razorbuild Eclipse
+# Output: dist/Eclipse.dmg
 ```
 
-DMG layout (locked across all RazorBackRoar apps):
-- Window: 600×350 · Icon size: 100
-- App icon: (175, 150) · Applications link: (425, 150)
-- Ad-hoc signed (`Signing identity: -`, RazorBackRoar)
+### Lint & Test
+
+```bash
+uv run ruff check .
+uv run ty check src --python-version 3.14
+uv run pytest tests/ -q
+```
 
 ---
 
-## Known Issues (pending follow-up pass)
+## Project Structure
 
-- `src/agentbox/ui/main_window.py` — `QSize` used without import
-- `LibraryListPanel` — `self.app` and `self.items` referenced but not initialized in class
-- `src/agentbox/importers/scanner.py` — `_is_under_named_dir()` defined but unused
-- `save_detected_to_library()` — typed for `tuple[str, str, Path]` but scanner yields `DetectedItem`; caller/callee contract needs alignment
+```text
+Eclipse/
+├── src/agentbox/
+│   ├── main.py           # Entry point
+│   ├── models.py         # LibraryItem dataclass
+│   ├── storage.py        # Atomic library read/write
+│   ├── render.py         # Jinja2 rendering engine
+│   ├── paths.py          # Path resolution
+│   ├── exporters/        # IDE-specific adapters
+│   │   ├── claude_code.py
+│   │   ├── codex.py
+│   │   ├── cursor.py
+│   │   ├── windsurf.py
+│   │   └── opencode.py
+│   ├── importers/        # Import pipeline
+│   │   ├── scanner.py
+│   │   ├── local_drop.py
+│   │   ├── github_url.py
+│   │   └── save_to_library.py
+│   ├── templates/        # Jinja2 templates
+│   └── ui/               # PySide6 GUI
+├── assets/
+├── tests/
+└── Eclipse.spec
+```
 
 ---
 
 ## License
 
-MIT © 2026 RazorBackRoar
+MIT License — see [LICENSE](LICENSE) for details.
+Copyright © 2026 RazorBackRoar
