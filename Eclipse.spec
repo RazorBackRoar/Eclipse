@@ -89,8 +89,8 @@ app = BUNDLE(
     info_plist={
         'CFBundleName': 'Eclipse',
         'CFBundleDisplayName': 'Eclipse',
-        'CFBundleShortVersionString': '0.1.0',
-        'CFBundleVersion': '0.1.0',
+        'CFBundleShortVersionString': '2.0.0',
+        'CFBundleVersion': '2.0.0',
         'LSMinimumSystemVersion': '12.0',
         'NSHighResolutionCapable': True,
         'NSRequiresAquaSystemAppearance': False,  # Supports Dark Mode
