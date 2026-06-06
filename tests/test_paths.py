@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from agentbox import paths
+from eclipse import paths
 
 
 def test_project_roots_are_consistent() -> None:

@@ -1,9 +1,9 @@
 from pathlib import Path
 
 import pytest
-from agentbox.models import LibraryItem, RenderTarget
-from agentbox.render import TemplateRenderer
-from agentbox.storage import load_manifest, save_manifest
+from eclipse.models import LibraryItem, RenderTarget
+from eclipse.render import TemplateRenderer
+from eclipse.storage import load_manifest, save_manifest
 from jinja2 import TemplateNotFound
 
 

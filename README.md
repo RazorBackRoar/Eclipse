@@ -60,7 +60,7 @@
 git clone https://github.com/RazorBackRoar/Eclipse.git
 cd Eclipse
 uv sync
-uv run python -m agentbox.main
+uv run python -m eclipse.main
 ```
 
 ### Build
@@ -84,7 +84,7 @@ uv run pytest tests/ -q
 
 ```text
 Eclipse/
-├── src/agentbox/
+├── src/eclipse/
 │   ├── main.py           # Entry point
 │   ├── models.py         # LibraryItem dataclass
 │   ├── storage.py        # Atomic library read/write
@@ -125,5 +125,5 @@ For developers:
 - Primary development/build target: Python 3.14 with `uv`.
 - Source compatibility goal: Python 3.12-3.14 (best effort).
 - Setup: `uv sync`
-- Run: `uv run python -m agentbox`
+- Run: `uv run python -m eclipse`
 <!-- razorcore:runtime:end -->
