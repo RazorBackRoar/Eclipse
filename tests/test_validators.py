@@ -3,7 +3,6 @@ from __future__ import annotations
 from pathlib import Path
 
 import pytest
-
 from eclipse.models import LibraryItem, RenderTarget
 from eclipse.validators import validate_item, validate_library
 

@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import pytest
-
 from eclipse.converter import (
     FORMATS,
     VALID_CONVERSIONS,

@@ -6,7 +6,6 @@ from eclipse.models import (
     DetectedItem,
     ImportResult,
     LibraryItem,
-    Metadata,
     RenderTarget,
     Requirements,
 )

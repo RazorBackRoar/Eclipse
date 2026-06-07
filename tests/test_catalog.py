@@ -1,15 +1,11 @@
 from __future__ import annotations
 
-import json
 from pathlib import Path
-
-import pytest
 
 from eclipse.catalog import (
     CATALOG,
     CATEGORIES,
     CATEGORY_IDS,
-    ExportPreset,
     ExportPresetStore,
     UserTemplateStore,
     category_label,

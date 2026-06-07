@@ -4,8 +4,7 @@ import json
 from pathlib import Path
 
 import pytest
-
-from eclipse.models import LibraryItem, RenderTarget
+from eclipse.models import LibraryItem
 from eclipse.storage import (
     TYPE_DIRS,
     item_manifest_path,
@@ -219,8 +218,6 @@ def test_save_manifest_cleans_up_tmp_on_failure(tmp_path: Path, monkeypatch) -> 
 
     item = LibraryItem(id="x", type="agent", name="X", data={})
     manifest_path = tmp_path / "manifest.json"
-
-    original_replace = Path.replace
 
     def failing_replace(self, target):
         raise OSError("Simulated disk failure")
