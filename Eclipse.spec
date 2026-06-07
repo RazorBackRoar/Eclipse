@@ -6,12 +6,12 @@ from pathlib import Path
 block_cipher = None
 
 a = Analysis(
-    ['src/agentbox/main.py'],
+    ['src/eclipse/main.py'],
     pathex=[str(Path('.').resolve())],
     binaries=[],
     datas=[
         # Include Jinja2 templates (required at runtime)
-        ('src/agentbox/templates', 'agentbox/templates'),
+        ('src/eclipse/templates', 'eclipse/templates'),
     ],
     hiddenimports=[
         'PySide6.QtWidgets',
@@ -19,15 +19,15 @@ a = Analysis(
         'PySide6.QtGui',
         'jinja2',
         'jinja2.ext',
-        'agentbox.exporters.claude_code',
-        'agentbox.exporters.codex',
-        'agentbox.exporters.cursor',
-        'agentbox.exporters.windsurf',
-        'agentbox.exporters.opencode',
-        'agentbox.importers.scanner',
-        'agentbox.importers.local_drop',
-        'agentbox.importers.github_url',
-        'agentbox.importers.save_to_library',
+        'eclipse.exporters.claude_code',
+        'eclipse.exporters.codex',
+        'eclipse.exporters.cursor',
+        'eclipse.exporters.windsurf',
+        'eclipse.exporters.opencode',
+        'eclipse.importers.scanner',
+        'eclipse.importers.local_drop',
+        'eclipse.importers.github_url',
+        'eclipse.importers.save_to_library',
     ],
     hookspath=[],
     hooksconfig={},
