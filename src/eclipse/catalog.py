@@ -944,10 +944,7 @@ uv run pytest tests/ -q
 - Keep changes minimal and targeted.
 """
 
-# ── Catalog singleton ─────────────────────────────────────────────────────────────
-
-CATALOG: list[TemplateEntry] = _build_catalog()
-
+# ── Catalog singleton (initialized after all template constants are defined) ───────
 
 def templates_for_category(category_id: str) -> list[TemplateEntry]:
     return [t for t in CATALOG if t.category == category_id]
@@ -1135,4 +1132,6 @@ _RULES_RULES = """\
 
 Global project rules, coding standards, and enforcement policies.
 """
+
+CATALOG: list[TemplateEntry] = _build_catalog()
 

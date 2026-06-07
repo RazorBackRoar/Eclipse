@@ -47,6 +47,7 @@ fix_colors.py
 fix_yellow.py
 
 # Session backups and local task files
+backups/
 AGENTS.md.backup.*
 INSTRUCTIONS.md
 
