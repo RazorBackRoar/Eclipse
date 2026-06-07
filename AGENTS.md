@@ -1,7 +1,7 @@
 # Eclipse AGENTS
 
 **Package:** `eclipse`
-**Version:** 0.1.0
+**Version:** 2.0.0
 
 Use this file with `../AGENTS.md`. It only records Eclipse-specific context.
 
