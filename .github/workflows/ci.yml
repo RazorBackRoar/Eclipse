@@ -40,7 +40,11 @@ jobs:
 
       - name: Tests
         working-directory: app
-        run: uv run pytest tests/ -q
+        run: uv run pytest tests/ --cov=src/eclipse --cov-report=term --cov-report=xml -q
+
+      - name: Coverage Check
+        working-directory: app
+        run: uv run pytest tests/ --cov=src/eclipse --cov-fail-under=25 -q
 
       - name: Prune cache (keep CI runner lean)
         if: always()

@@ -1,15 +1,15 @@
 # Eclipse AGENTS
 
-**Package:** `agentbox`
+**Package:** `eclipse`
 **Version:** 0.1.0
 
 Use this file with `../AGENTS.md`. It only records Eclipse-specific context.
 
 ## Purpose And Entry Points
 
-- Main app: `src/agentbox/main.py`
-- Key areas: `src/agentbox/models.py`, `src/agentbox/storage.py`, `src/agentbox/render.py`, `src/agentbox/exporters/`, `src/agentbox/importers/`
-- Run locally: `uv run python -m agentbox.main`
+- Main app: `src/eclipse/main.py`
+- Key areas: `src/eclipse/models.py`, `src/eclipse/storage.py`, `src/eclipse/render.py`, `src/eclipse/exporters/`, `src/eclipse/importers/`
+- Run locally: `uv run python -m eclipse.main`
 - Build through workspace wrappers: `eclipsebuild` or `razorbuild Eclipse`
 - Push: `eclipsepush`
 - `razorcore` is an editable dependency; re-verify Eclipse after upstream shared-library changes.
@@ -18,16 +18,16 @@ Use this file with `../AGENTS.md`. It only records Eclipse-specific context.
 
 - **Library is Source of Truth**: Never allow exporters to modify the library.
 - **Pure Exporters**: Exporters only render and write. They don't validate or manage state.
-- **Path Safety**: Use `agentbox.paths` for all path resolution. Never use hardcoded strings or `~`.
+- **Path Safety**: Use `eclipse.paths` for all path resolution. Never use hardcoded strings or `~`.
 - **Atomic Operations**: When saving to the library, ensure the directory structure is created before the manifest.
 - **Type Safety**: Respect the `LibraryItem` dataclass structure.
 
 ## Non-Obvious Rules
 
-- Package name is `agentbox`; display name is `Eclipse`. The `.spec` file, build scripts, and DMG use `Eclipse`. Source imports use `agentbox`.
-- Jinja2 templates live in `src/agentbox/templates/` and are bundled via `Eclipse.spec` datas — any new template directory must be added to the spec.
+- Package name is `eclipse`; display name is `Eclipse`. The `.spec` file, build scripts, and DMG use `Eclipse`. Source imports use `eclipse`.
+- Jinja2 templates live in `src/eclipse/templates/` and are bundled via `Eclipse.spec` datas — any new template directory must be added to the spec.
 - Exporters are keyed by tool name string (e.g. `"claude_code"`, `"windsurf"`) — the key is the contract, not the class name.
-- `agentbox.paths` is the single place path logic lives; never resolve `~` inline in exporters or importers.
+- `eclipse.paths` is the single place path logic lives; never resolve `~` inline in exporters or importers.
 
 ## Verification
 
@@ -41,9 +41,33 @@ uv run pytest tests/ -q
 
 Add focused checks when relevant:
 
-- Exporter output correctness: `uv run pytest tests/test_exporters.py -q`
-- Library persistence: `uv run pytest tests/test_storage.py -q`
-- Full smoke: `uv run python -m agentbox.main`
+- Core logic: `uv run pytest tests/test_models.py tests/test_validators.py tests/test_converter.py tests/test_catalog.py -q`
+- Storage and scanning: `uv run pytest tests/test_storage_extended.py tests/test_scanner.py -q`
+- Export safety: `uv run pytest tests/test_safe_export.py -q`
+- Full smoke: `uv run python -m eclipse.main`
+
+## Test Coverage
+
+**Current Status:** 31% overall coverage (211 tests) as of 2026-06-07
+
+**Core Logic Coverage:**
+- `catalog.py`: 97% — UserTemplateStore, ExportPresetStore, catalog integrity
+- `validators.py`: 97% — All validation branches (ID, name, type, targets, sidecars)
+- `converter.py`: 97% — All 11 conversion pairs, code block protection
+- `safe_export.py`: 97% — Export planning, execution, conflict handling
+- `scanner.py`: 97% — File pattern detection, junk dir pruning
+- `storage.py`: 80% — Library scanning, item renaming, atomic operations
+- `render.py`: 85% — Template rendering logic
+
+**Intentionally Excluded:**
+- UI widgets (0% coverage) — Require QApplication and display
+- Entry points (main.py, __main__.py) — Thin launchers with no logic
+- macOS Trash integration — Requires subprocess mocking
+
+**Recent Improvements:**
+- Added 7 comprehensive test files covering core logic modules
+- Fixed production bug in catalog.py (initialization order issue)
+- See `../../Docs/TESTING_STANDARDS.md` for testing patterns and coverage targets
 
 ## CI Limitations
 
@@ -146,11 +170,15 @@ Do not make Claude Code the default or primary workflow.
 
 ## Test Coverage
 
-`tests/` exists but is currently empty — no tests have been written yet.
-This is a pre-existing gap, not a regression. The Verification section above
-references test file names (`test_exporters.py`, `test_storage.py`) that do
-not yet exist. When adding tests, place them under `tests/` and follow the
-pytest conventions in `pyproject.toml` (`pythonpath = ["src"]`).
+**Current Status:** 31% overall coverage (211 tests) as of 2026-06-07
+
+See the Verification section above for detailed coverage breakdown by module.
+
+**Testing Standards:**
+- Follow `../../Docs/TESTING_STANDARDS.md` for coverage targets and patterns
+- Core logic modules target ≥90% coverage
+- UI widgets intentionally excluded (require QApplication)
+- Entry points and thin wrappers excluded from coverage targets
 
 
 ## Behavioral Guidelines
