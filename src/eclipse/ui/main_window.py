@@ -1,4 +1,4 @@
-# src/agentbox/ui/main_window.py
+# src/eclipse/ui/main_window.py
 """Main window widget — sidebar + content area layout."""
 from __future__ import annotations
 

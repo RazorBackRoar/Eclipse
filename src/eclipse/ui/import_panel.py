@@ -1,4 +1,4 @@
-# src/agentbox/ui/import_panel.py
+# src/eclipse/ui/import_panel.py
 """Import tab UI — scan workspace folders and import configs."""
 from __future__ import annotations
 

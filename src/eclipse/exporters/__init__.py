@@ -1,4 +1,4 @@
-# src/agentbox/exporters/__init__.py
+# src/eclipse/exporters/__init__.py
 from .claude_code import ClaudeCodeExporter
 from .codex import CodexExporter
 from .cursor import CursorExporter

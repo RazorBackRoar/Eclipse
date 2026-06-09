@@ -1,4 +1,4 @@
-# src/agentbox/paths.py
+# src/eclipse/paths.py
 from __future__ import annotations
 
 from pathlib import Path
@@ -8,7 +8,7 @@ def project_root() -> Path:
     """Returns the project root directory.
 
     This is computed by going 2 levels up from this file:
-      src/agentbox/paths.py → src/agentbox/ → src/ → project root
+      src/eclipse/paths.py → src/eclipse/ → src/ → project root
     """
     return Path(__file__).resolve().parents[2]
 

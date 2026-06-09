@@ -1,4 +1,4 @@
-# src/agentbox/skill_preview.py
+# src/eclipse/skill_preview.py
 from __future__ import annotations
 
 from pathlib import Path

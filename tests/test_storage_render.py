@@ -1,10 +1,11 @@
 from pathlib import Path
 
 import pytest
+from jinja2 import TemplateNotFound
+
 from eclipse.models import LibraryItem, RenderTarget
 from eclipse.render import TemplateRenderer
 from eclipse.storage import load_manifest, save_manifest
-from jinja2 import TemplateNotFound
 
 
 def test_save_and_load_manifest_roundtrip(tmp_path: Path) -> None:

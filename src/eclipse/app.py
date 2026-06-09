@@ -1,4 +1,4 @@
-# src/agentbox/app.py
+# src/eclipse/app.py
 """Eclipse application controller — manages template catalog, converter, and exports."""
 from __future__ import annotations
 

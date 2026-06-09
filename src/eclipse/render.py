@@ -1,4 +1,4 @@
-# src/agentbox/render.py
+# src/eclipse/render.py
 from __future__ import annotations
 
 from pathlib import Path

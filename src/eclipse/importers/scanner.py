@@ -1,4 +1,4 @@
-# src/agentbox/importers/scanner.py
+# src/eclipse/importers/scanner.py
 from __future__ import annotations
 
 import json

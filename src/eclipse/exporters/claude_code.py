@@ -1,4 +1,4 @@
-# src/agentbox/exporters/claude_code.py
+# src/eclipse/exporters/claude_code.py
 from __future__ import annotations
 
 from pathlib import Path

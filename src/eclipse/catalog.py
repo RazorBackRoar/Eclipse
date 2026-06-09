@@ -1,4 +1,4 @@
-# src/agentbox/catalog.py
+# src/eclipse/catalog.py
 """Template catalog for Eclipse workspace config generator.
 
 Defines all categories and their starter templates with default content.

@@ -1,4 +1,4 @@
-# src/agentbox/ui/export_panel.py
+# src/eclipse/ui/export_panel.py
 """Export tab UI — batch export with category/template selection and preview."""
 from __future__ import annotations
 

@@ -1,4 +1,4 @@
-# src/agentbox/converter.py
+# src/eclipse/converter.py
 """Rule-based text converter between workspace config formats.
 
 Converts between CLAUDE.md, CURSOR.md, GEMINI.md, and AGENTS.md

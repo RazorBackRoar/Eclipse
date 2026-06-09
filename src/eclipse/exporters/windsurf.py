@@ -1,4 +1,4 @@
-# src/agentbox/exporters/windsurf.py
+# src/eclipse/exporters/windsurf.py
 from __future__ import annotations
 
 from pathlib import Path

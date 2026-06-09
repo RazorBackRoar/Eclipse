@@ -1,4 +1,4 @@
-# src/agentbox/importer.py
+# src/eclipse/importer.py
 """Import scanner for existing workspace configurations."""
 from __future__ import annotations
 

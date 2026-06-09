@@ -1,4 +1,4 @@
-# src/agentbox/exporters/opencode.py
+# src/eclipse/exporters/opencode.py
 from __future__ import annotations
 
 from pathlib import Path

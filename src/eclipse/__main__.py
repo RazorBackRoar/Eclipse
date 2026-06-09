@@ -1,4 +1,4 @@
-# src/agentbox/__main__.py
+# src/eclipse/__main__.py
 from .main import main
 
 

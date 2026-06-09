@@ -1,4 +1,4 @@
-# src/agentbox/main.py
+# src/eclipse/main.py
 import sys
 
 from PySide6.QtWidgets import QApplication

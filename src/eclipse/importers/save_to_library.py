@@ -1,4 +1,4 @@
-# src/agentbox/importers/save_to_library.py
+# src/eclipse/importers/save_to_library.py
 from __future__ import annotations
 
 import json

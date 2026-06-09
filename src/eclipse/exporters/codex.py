@@ -1,4 +1,4 @@
-# src/agentbox/exporters/codex.py
+# src/eclipse/exporters/codex.py
 from __future__ import annotations
 
 import shutil

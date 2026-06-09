@@ -1,4 +1,4 @@
-# src/agentbox/storage.py
+# src/eclipse/storage.py
 from __future__ import annotations
 
 import json

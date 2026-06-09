@@ -1,4 +1,4 @@
-# src/agentbox/export_formats.py
+# src/eclipse/export_formats.py
 from __future__ import annotations
 
 import shutil

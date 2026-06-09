@@ -1,4 +1,4 @@
-# src/agentbox/ui/sidebar.py
+# src/eclipse/ui/sidebar.py
 """Sidebar navigation for Eclipse workspace config manager."""
 from __future__ import annotations
 

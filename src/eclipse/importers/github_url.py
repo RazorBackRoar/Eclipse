@@ -1,4 +1,4 @@
-# src/agentbox/importers/github_url.py
+# src/eclipse/importers/github_url.py
 from __future__ import annotations
 
 import subprocess
@@ -18,7 +18,7 @@ def handle_github_import(url: str) -> ImportResult:
         if not parts.endswith(".git"):
             url = parts + ".git"
 
-    temp_dir = tempfile.mkdtemp(prefix="agentbox-clone-")
+    temp_dir = tempfile.mkdtemp(prefix="eclipse-clone-")
     temp_path = Path(temp_dir)
 
     result = ImportResult(source_label=url, working_dir=temp_path)

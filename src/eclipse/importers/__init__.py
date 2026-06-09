@@ -1,4 +1,4 @@
-# src/agentbox/importers/__init__.py
+# src/eclipse/importers/__init__.py
 from .base import DetectedItem, ImportResult
 from .github_url import handle_github_import
 from .local_drop import handle_local_drop

@@ -1,4 +1,4 @@
-# src/agentbox/importers/local_drop.py
+# src/eclipse/importers/local_drop.py
 from __future__ import annotations
 
 from pathlib import Path

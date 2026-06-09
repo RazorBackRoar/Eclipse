@@ -1,4 +1,4 @@
-# src/agentbox/ui/converter_panel.py
+# src/eclipse/ui/converter_panel.py
 """Converter tab UI — paste or load text, choose formats, preview conversion."""
 from __future__ import annotations
 

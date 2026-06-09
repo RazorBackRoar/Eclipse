@@ -1,4 +1,4 @@
-# src/agentbox/importers/base.py
+# src/eclipse/importers/base.py
 # Re-export the import-related models from the top-level models module.
 from ..models import DetectedItem, ImportResult
 

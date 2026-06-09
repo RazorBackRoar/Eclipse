@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Any
 
 import pytest
+
 from eclipse.models import LibraryItem, RenderTarget
 from eclipse.validators import validate_item, validate_library
 
@@ -10,7 +12,7 @@ from eclipse.validators import validate_item, validate_library
 # ── Helpers ───────────────────────────────────────────────────────────────────────
 
 def _item(**kwargs) -> LibraryItem:
-    defaults = {"id": "valid-id", "type": "agent", "name": "Valid Item"}
+    defaults: dict[str, Any] = {"id": "valid-id", "type": "agent", "name": "Valid Item"}
     defaults.update(kwargs)
     return LibraryItem(**defaults)
 
@@ -112,14 +114,14 @@ def test_valid_targets_pass() -> None:
 # ── Render target validation ──────────────────────────────────────────────────────
 
 def test_render_with_unknown_target_fails() -> None:
-    renders = [RenderTarget(target="nonexistent", render_as="CLAUDE.md")]  # type: ignore[arg-type]
+    renders = [RenderTarget(target="nonexistent", render_as="CLAUDE.md")]  # ty: ignore[invalid-argument-type]
     item = _item(renders=renders)
     errors = validate_item(item)
     assert any("Render has unknown target" in e for e in errors)
 
 
 def test_render_with_unknown_render_as_fails() -> None:
-    renders = [RenderTarget(target="claude-code", render_as="FAKE.txt")]  # type: ignore[arg-type]
+    renders = [RenderTarget(target="claude-code", render_as="FAKE.txt")]  # ty: ignore[invalid-argument-type]
     item = _item(renders=renders)
     errors = validate_item(item)
     assert any("Render has unknown render_as" in e for e in errors)

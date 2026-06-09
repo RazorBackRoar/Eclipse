@@ -1,4 +1,4 @@
-# src/agentbox/ui/category_panel.py
+# src/eclipse/ui/category_panel.py
 """Category content panel — template list + editor for each category tab."""
 from __future__ import annotations
 

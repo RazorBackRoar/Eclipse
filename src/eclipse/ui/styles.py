@@ -1,4 +1,4 @@
-# src/agentbox/ui/styles.py
+# src/eclipse/ui/styles.py
 
 STELLAR_STYLE = """
 QWidget {

@@ -1,4 +1,4 @@
-# src/agentbox/exporters/base.py
+# src/eclipse/exporters/base.py
 from __future__ import annotations
 
 from pathlib import Path

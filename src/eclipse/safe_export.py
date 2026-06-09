@@ -1,4 +1,4 @@
-# src/agentbox/safe_export.py
+# src/eclipse/safe_export.py
 """Safe export engine for Eclipse.
 
 Computes export plans, checks for conflicts, supports normal/hidden folder

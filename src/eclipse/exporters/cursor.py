@@ -1,4 +1,4 @@
-# src/agentbox/exporters/cursor.py
+# src/eclipse/exporters/cursor.py
 from __future__ import annotations
 
 from pathlib import Path

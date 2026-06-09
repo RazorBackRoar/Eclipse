@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 import pytest
+
 from eclipse.models import LibraryItem
 from eclipse.storage import (
     TYPE_DIRS,
