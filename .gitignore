@@ -78,3 +78,6 @@ env/
 *.key
 *.p12
 *.mobileprovision
+
+# App-generated user exports — never publish
+exports/
