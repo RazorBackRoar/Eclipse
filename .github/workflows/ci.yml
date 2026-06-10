@@ -1,9 +1,5 @@
 name: CI
 
-# Thin caller — all CI logic lives in the shared reusable workflow.
-# Single source of truth: RazorBackRoar/.razorcore/.github/workflows/app-ci.yml
-# To add a coverage gate, pass `coverage-package:` and `coverage-min:` below.
-
 on:
   push:
     branches: [main]
@@ -11,9 +7,40 @@ on:
     branches: [main]
 
 jobs:
-  ci:
-    uses: RazorBackRoar/.razorcore/.github/workflows/app-ci.yml@main
-    with:
-      app-name: Eclipse
-      coverage-package: src/eclipse
-      coverage-min: 25
+  quality:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Eclipse
+        uses: actions/checkout@v6
+        with:
+          path: app
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Sync
+        working-directory: app
+        run: uv sync --all-extras --dev
+
+      - name: Lint
+        working-directory: app
+        run: uv run ruff check .
+
+      - name: Type Check
+        working-directory: app
+        run: uv run ty check src --python-version 3.14
+
+      - name: Tests
+        working-directory: app
+        run: >-
+          uv run pytest tests/ --cov=src/eclipse --cov-report=term
+          --cov-report=xml --cov-fail-under=25 -q
+
+      - name: Prune cache
+        if: always()
+        run: uv cache prune --ci
